@@ -1,0 +1,3 @@
+.navbar {
+	@apply bg-red-300 p-2 flex justify-center;
+}
