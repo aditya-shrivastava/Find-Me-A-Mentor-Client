@@ -1,3 +1,7 @@
 .navbar {
-	@apply bg-red-300 p-2 flex justify-center;
+	@apply bg-blue-300 p-2 flex justify-center shadow-lg;
 }
+.navbar>h1 {
+	@apply text-3xl 
+}
+
