@@ -1,0 +1,18 @@
+.rating-card { 
+    @apply bg-white shadow-xl w-56 flex flex-col min-w-min rounded p-2 ;
+}
+
+.starIcon {
+    @apply text-yellow-400;
+}
+
+.starIcon > .MuiSvgIcon-root{
+        @apply text-3xl;
+    }
+
+.name {
+    @apply text-gray-900 text-lg
+    space-y-2
+    mr-0.5
+    text-right;
+}
