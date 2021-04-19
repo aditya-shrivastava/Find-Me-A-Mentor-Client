@@ -3,9 +3,15 @@ import './SummaryCard.css';
 
 const SummaryCard = () => {
     return (
-        <div className='summary-card'>
-            <h1>Summary Card Component</h1>
-        </div>
+        <container className='summary-card'>
+            <div className="mentor">
+                <h3>Jessica James</h3>
+            </div>
+            <div className="occupation">
+                <h2>Author</h2>
+            </div>
+            <p className="aboutMentor">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, totam.</p>
+        </container>
     )
 }
 

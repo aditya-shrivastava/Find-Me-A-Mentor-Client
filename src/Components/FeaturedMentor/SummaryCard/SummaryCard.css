@@ -1,0 +1,15 @@
+.summary-card { 
+    @apply bg-white shadow-xl w-80 flex flex-col min-w-min rounded p-4 ;
+}
+
+.mentor{
+    @apply text-left text-2xl font-semibold text-green-600;
+}
+
+.occupation{
+    @apply font-semibold text-base text-gray-900;
+}
+
+.aboutMentor{
+    @apply text-sm text-gray-900 mt-2;
+}
