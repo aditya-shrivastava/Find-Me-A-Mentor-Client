@@ -1,7 +1,15 @@
 .navbar {
-	@apply bg-blue-300 p-2 flex justify-center shadow-lg;
+	@apply bg-brgreen p-2 flex justify-between;
 }
-.navbar>h1 {
-	@apply text-3xl 
+
+.left {
+	@apply text-white p-1;
+}
+
+.center{
+	@apply p-1;
+}
+.right {
+	@apply  text-white p-1 space-x-10 ;
 }
 
