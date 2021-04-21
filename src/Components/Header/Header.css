@@ -1,3 +1,35 @@
 .header {
-	@apply bg-blue-400 p-10 flex justify-center items-center space-x-4;
+	@apply bg-green-500 p-10 flex lg:px-32 flex-row items-center space-x-4;
+}
+
+.Introduction {
+	@apply flex-col flex box-border bg-transparent z-30 text-white p-4 m-4;
+}
+
+.Introduction > h1 {
+	@apply text-left text-5xl mb-2;
+}
+
+.Introduction > p {
+	@apply font-light tracking-normal relative text-lg pl-1;
+}
+
+.div{
+	@apply flex items-center mt-6 justify-items-center;
+}
+
+.div > Button {
+	@apply text-green-600 items-center border-none h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
+}
+
+.select > select{
+	@apply bg-white text-gray-700 text-lg w-96 h-14 shadow-2xl rounded-sm px-10 py-2;
+}
+
+.img1{
+	@apply flex absolute z-10 bottom-24 left-96 ;
+}
+
+.img2{
+	@apply flex w-52 h-72 z-10 absolute top-16 left-0;
 }

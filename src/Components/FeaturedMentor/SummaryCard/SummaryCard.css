@@ -1,5 +1,5 @@
 .summary-card { 
-    @apply bg-white shadow-xl w-80 flex flex-col min-w-min rounded p-4 ;
+    @apply bg-white shadow-2xl w-80 flex flex-col min-w-min rounded p-4 ;
 }
 
 .mentor{
