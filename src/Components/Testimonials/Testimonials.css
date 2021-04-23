@@ -1,3 +1,7 @@
 .testimonials {
-	@apply bg-green-400 p-8 flex items-center justify-evenly flex-col;
+	@apply bg-white py-8 w-full space-x-8 px-28 h-auto flex justify-center items-center;
+}
+
+.cards {
+	@apply flex flex-row overflow-x-scroll;
 }

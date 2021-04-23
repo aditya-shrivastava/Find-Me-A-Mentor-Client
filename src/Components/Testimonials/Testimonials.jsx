@@ -5,8 +5,14 @@ import './Testimonials.css';
 const Testimonials = () => {
     return (
         <div className='testimonials'>
-            <h1>Testimonials Section Component</h1>
-            <TestimonialCard />
+            <div className="cards">
+                <TestimonialCard />
+                <TestimonialCard />
+                <TestimonialCard />
+                <TestimonialCard />
+                <TestimonialCard />
+                <TestimonialCard />
+            </div>
         </div>
     )
 }

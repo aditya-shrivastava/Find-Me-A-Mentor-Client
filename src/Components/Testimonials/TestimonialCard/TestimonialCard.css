@@ -1,3 +1,20 @@
-.testimonial-card {
-	@apply bg-yellow-300 p-4;
+
+.individual_testimonial{
+	@apply bg-white shadow-lg min-w-max h-44 m-4 rounded-l-lg flex;
+}
+
+.review{
+	@apply flex flex-col pl-4 pr-1 py-4;
+}
+
+.review > p {
+	@apply text-left mt-2 flex w-80 text-sm font-light;
+}
+
+.review > h4 {
+	@apply font-semibold text-lg;
+}
+
+.review > h1 {
+	@apply font-medium text-base;
 }
