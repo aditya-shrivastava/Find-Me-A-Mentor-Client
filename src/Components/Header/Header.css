@@ -19,7 +19,7 @@
 }
 
 .div > Button {
-	@apply text-green-600 items-center border-none h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
+	@apply text-green-600 items-center focus:ring-0 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
 }
 
 .select > select{
