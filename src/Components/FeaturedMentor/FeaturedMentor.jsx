@@ -8,7 +8,7 @@ import img3 from '../../Assets/Group 7.svg'
 const FeaturedMentor = () => {
     return (
         <React.Fragment>           
-            <container className='featured-mentor'>
+            <div className='featured-mentor'>
                 <div className="rating">
                     <RatingCard />
                 </div>
@@ -20,7 +20,7 @@ const FeaturedMentor = () => {
                 </div>
                 <img src={ img3 } alt= "" className="img3"/> 
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="" width="400" height = "400" />
-            </container>
+            </div>
         </React.Fragment>
         
     )

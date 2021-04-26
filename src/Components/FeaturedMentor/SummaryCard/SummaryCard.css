@@ -3,7 +3,7 @@
 }
 
 .mentor{
-    @apply text-left text-2xl font-semibold text-green-600;
+    @apply text-left text-2xl font-semibold text-brgreen;
 }
 
 .occupation{
