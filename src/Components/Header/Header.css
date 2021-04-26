@@ -1,5 +1,5 @@
 .header {
-	@apply bg-green-500 p-10 flex lg:px-32 flex-row items-center space-x-4;
+	@apply bg-brgreen p-10 flex lg:px-32 flex-row items-center space-x-4;
 }
 
 .Introduction {
@@ -19,7 +19,7 @@
 }
 
 .div > Button {
-	@apply text-green-600 items-center focus:ring-0 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
+	@apply text-brgreen items-center focus:ring-0 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
 }
 
 .select > select{
