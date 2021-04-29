@@ -1,0 +1,22 @@
+.testimonialForm {
+    @apply flex flex-col w-full h-full justify-center items-center;
+}
+
+.form {
+	@apply flex flex-col bg-brgreen w-3/4 p-8 h-auto justify-center items-center;
+}
+
+.form > p {
+    @apply text-white font-medium text-xl text-left;
+}
+
+.button_style{
+    @apply w-4/5 px-20 h-auto flex justify-end ;
+}
+.button_style > button {
+    @apply bg-white text-brgreen font-medium focus:outline-none hover:bg-gray-100 text-xl text-center rounded shadow py-4 px-12 m-6;
+}
+
+.textarea {
+    @apply bg-white rounded-sm text-gray-600 p-8 focus:outline-none focus:ring-1 focus:ring-green-500;
+}

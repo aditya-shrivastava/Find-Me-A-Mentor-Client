@@ -1,5 +1,6 @@
 import React from 'react';
 import { About, Header, Testimonials } from '../Components';
+import TestimonialForm from '../Components/Testimonial_Form/TestimonialForm';
 
 const Home = () => {
     return (
@@ -7,6 +8,7 @@ const Home = () => {
             <Header />
             <Testimonials />
             <About />
+            <TestimonialForm />
         </div>
     )
 }
