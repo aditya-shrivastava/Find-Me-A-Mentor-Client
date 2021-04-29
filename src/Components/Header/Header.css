@@ -19,7 +19,7 @@
 }
 
 .div > Button {
-	@apply text-brgreen items-center focus:ring-0 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
+	@apply text-brgreen items-center focus:outline-none hover:bg-gray-100 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
 }
 
 .select > select{
@@ -27,7 +27,7 @@
 }
 
 .img1{
-	@apply flex absolute z-10 bottom-24 left-96 ;
+	@apply flex absolute z-10 bottom-52 right-2/3 ;
 }
 
 .img2{
