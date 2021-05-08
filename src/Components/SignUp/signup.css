@@ -1,0 +1,39 @@
+.signUp{
+    @apply bg-white p-5;
+}
+.head{
+    @apply text-brgreen pt-2 pb-5 flex justify-center;
+}
+.top1{
+    @apply flex justify-center;
+}
+.top1 >span {
+    @apply text-xl;
+}
+.top2{
+    @apply flex justify-center pb-5;
+}
+.UserName{
+    @apply p-2 font-semibold;
+}
+.Password{
+    @apply p-2 font-semibold;
+}
+.Email{
+    @apply p-2 font-semibold;
+}
+.ConfirmPassword{
+    @apply p-2 font-semibold;
+}
+.Button{
+    @apply p-2 pt-4 flex justify-center ;  
+}
+.Button > Button {
+    @apply text-white ;
+}
+.lower{
+    @apply pt-10 pb-2 flex justify-center text-sm space-x-2;
+}
+.create{
+    @apply text-blue-500;
+}

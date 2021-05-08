@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { Footer, Navbar } from './Components';
 import Home from './Pages/Home';
-import About from './Components/About/About';
 import OurTeam from './Pages/OurTeam';
 import Error from './Pages/Error';
 import {
@@ -19,9 +18,6 @@ function App() {
 				<Switch>
 					<Route exact path="/" >
 						<Home />
-					</Route>
-					<Route exact path="/about" >
-						<About />
 					</Route>
 					<Route exact path="/team" >
 						<OurTeam />

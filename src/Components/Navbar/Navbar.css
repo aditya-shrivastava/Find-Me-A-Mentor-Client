@@ -12,4 +12,7 @@
 .right {
 	@apply  text-white p-1 space-x-10 ;
 }
+.right > Button {
+	@apply bg-white;
+}
 
