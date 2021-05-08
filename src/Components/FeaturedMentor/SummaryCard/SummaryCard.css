@@ -3,7 +3,7 @@
 }
 
 .mentor{
-    @apply text-left text-2xl font-semibold text-green-600;
+    @apply text-left text-2xl font-semibold text-brgreen;
 }
 
 .occupation{
@@ -11,5 +11,5 @@
 }
 
 .aboutMentor{
-    @apply text-sm text-gray-900 mt-2;
+    @apply text-sm text-gray-800 mt-2;
 }

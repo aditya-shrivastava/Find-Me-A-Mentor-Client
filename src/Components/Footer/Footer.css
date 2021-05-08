@@ -1,3 +1,11 @@
 .footer {
-	@apply bg-green-500 p-4;
+    @apply w-full h-auto flex justify-center bg-brgreen mt-8 items-center;
+}
+
+.circle {
+    @apply flex justify-center w-1 h-1 mx-1 rounded-full bg-white;
+}
+
+.footer > h1, p {
+    @apply text-white font-light py-4 text-sm;
 }

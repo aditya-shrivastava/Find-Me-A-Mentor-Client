@@ -1,3 +1,79 @@
 .about {
-	@apply bg-indigo-400 p-12 flex items-center justify-center;
+	@apply h-auto flex flex-col space-y-12 items-center justify-center;
+}
+
+.about > h1 {
+	@apply font-medium text-3xl p-4 ml-4 text-gray-800 text-left w-full;
+}
+
+.about1 {
+	@apply flex flex-row items-center px-32 py-10 justify-center ;
+}
+
+.blue_box {
+	@apply bg-blue-500 flex flex-col shadow z-20 items-center w-4/5 h-3/4 justify-center;
+}
+
+.about1_image {
+	@apply flex w-1/2 h-1/2 z-30;
+}
+
+.about1_info {
+	@apply flex flex-col w-2/3 h-4/5 my-16 ;
+}
+
+.about1_info >h1 {
+	@apply text-white font-medium text-4xl mt-8 mb-10;
+}
+
+.about1_info > p {
+	@apply text-white font-normal p-2 text-xl mb-8;
+}
+
+.about2 {
+	@apply flex flex-row items-center px-32 py-10 justify-center ;
+}
+
+.green_box {
+	@apply bg-brgreen flex flex-col shadow z-20 items-center w-4/5 h-3/4 justify-center;
+}
+
+.about2_image {
+	@apply flex w-1/2 h-1/2;
+}
+
+.about2_info {
+	@apply flex flex-col w-2/3 h-4/5 my-16 ;
+}
+
+.about2_info >h1 {
+	@apply text-white font-medium text-4xl mt-8 mb-10;
+}
+
+.about2_info > p {
+	@apply text-white font-normal p-2 text-xl mb-8;
+}
+
+.about3 {
+	@apply flex flex-row items-center px-32 py-10 justify-center ;
+}
+
+.orange_box {
+	@apply bg-yellow-500 flex flex-col shadow z-20 items-center w-4/5 h-3/4 justify-center;
+}
+
+.about3_image {
+	@apply flex w-1/2 h-1/2 z-30;
+}
+
+.about3_info {
+	@apply flex flex-col w-2/3 h-4/5 my-20 ;
+}
+
+.about3_info >h1 {
+	@apply text-white font-medium text-4xl mt-8 mb-10;
+}
+
+.about3_info > p {
+	@apply text-white p-2 font-normal text-xl mb-8;
 }
