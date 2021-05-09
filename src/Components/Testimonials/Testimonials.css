@@ -1,9 +1,13 @@
 .testimonials {
-	@apply bg-white py-8 w-full space-x-8 px-28 h-auto flex justify-center items-center;
+	@apply my-32 w-full space-x-8 h-auto flex justify-center items-center flex-col;
+}
+
+.testimonials > h1 {
+	@apply font-medium text-3xl p-4 ml-4 text-gray-800 text-left w-full mb-10;
 }
 
 .cards {
-	@apply flex flex-row overflow-x-scroll;
+	@apply flex flex-row overflow-x-scroll w-4/5;
 }
 
 .cards::-webkit-scrollbar {

@@ -5,6 +5,9 @@ import Login from '../Login/login';
 import Popup from '../Popup';
 import './Navbar.css';
 
+import { Link } from 'react-scroll';
+import UserAvatar from './UserAvatar/UserAvatar';
+
 
 const Navbar = () => {
     const [openPopup, setOpenPopup] = useState(false)
@@ -19,15 +22,16 @@ const Navbar = () => {
             </div>
 
             <div className='right'>
-                <a href="/">
+                <Link smooth className='link' to='/'>
                     <span>Home</span>
-                </a>
-                <a href="/about">
-                    <span>About</span>
-                </a>
-                <a href="/team">
+                </Link>
+                <Link smooth className='link' to='about'>
+                    About
+                </Link>
+                <Link smooth to="/team">
                     <span>Our Team</span>
-                </a>
+                </Link>
+                {/* <UserAvatar /> */}
                 <Button style={{ color: '#1DB954' }} onClick={() => setOpenPopup(true)}>
                     <span>Login</span>
                 </Button>

@@ -6,13 +6,16 @@
 	@apply text-white p-1;
 }
 
-.center{
+.link {
+	@apply cursor-pointer;
+}
+
+.center {
 	@apply p-1;
 }
 .right {
-	@apply  text-white p-1 space-x-10 ;
+	@apply text-white p-1 space-x-10;
 }
 .right > Button {
 	@apply bg-white;
 }
-
