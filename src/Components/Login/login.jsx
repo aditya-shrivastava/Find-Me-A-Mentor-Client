@@ -1,37 +1,42 @@
 import React, {useState} from 'react';
-import { Button, TextField} from '@material-ui/core';
-import './login.css';
-import SignUp from '../SignUp/signup';
-import Popup from '../Popup';
+import { Button } from '@material-ui/core';
+import './Login.css';
 
 
-const Login = (props) => {
-    const [openPopup, setOpenPopup] = useState(false)
+const Login = ({setIsLogin }) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = e => {
+        e.preventDefault();
+        console.log(email, password);
+        setEmail('');
+        setPassword('');
+    }
+
     return (
 
             <div className='login'>
                 <div className='head'>
-                    <span>Find Me A Mentor</span>
+                    <h3>Find Me A Mentor</h3>
+                    <h1>Welcome Back!</h1>
+                    We are happy to see you.
                 </div>
-                <div className='top1'>
-                    <span><h1>Welcome Back!</h1></span>
+                <form onSubmit={handleLogin} className="login-form">
+                    <div className='input-field'>
+                    Email
+                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
                 </div>
-                <div className='top2'>
-                    <span>We are happy to see you.</span>
+                <div className='input-field'>
+                    Password
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
-                <div className='Email'><span>Email</span>
-                    <div><TextField style={{ backgroundColor: '#EAE8E8', width: 300, borderRadius: 5 }} InputProps={{ disableUnderline: true }} placeholder=' test@email.com' /></div>
-                </div>
-                <div className='Password'>
-                    <span>Password</span>
-                    <div><TextField type='password' style={{ backgroundColor: '#EAE8E8', width: 300, borderRadius: 5 }} InputProps={{ disableUnderline: true }} placeholder=' ********' /></div>
-                </div>
-                <div className='Button'><Button type='submit' style={{ backgroundColor: '#339DFF', width: 150}}><span>Login</span></Button></div>
+                <Button variant='contained' type='submit'>Login</Button>
+                </form>
                 <div className='lower'>
                     <span>Don't have an account? </span>
-                    <div className='create' onClick={() => setOpenPopup(true)}>Create Account</div>
+                    <div className='create' onClick={() => setIsLogin(false)}>Create Account</div>
                 </div>
-                <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}> <SignUp/></Popup>
             </div>
         
     )

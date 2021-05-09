@@ -1,9 +1,9 @@
 .header {
-	@apply bg-brgreen p-10 flex lg:px-32 relative flex-row items-center space-x-4;
+	@apply bg-brgreen py-14 flex lg:px-32 relative flex-row items-center;
 }
 
 .Introduction {
-	@apply flex-col flex relative z-30 text-white p-4 m-4;
+	@apply flex-col flex relative z-30 text-white p-4;
 }
 
 .Introduction > h1 {
@@ -11,7 +11,7 @@
 }
 
 .Introduction > p {
-	@apply font-light tracking-normal text-lg pl-1;
+	@apply font-light tracking-normal text-lg;
 }
 
 .drop-down {
@@ -27,9 +27,9 @@
 }
 
 .img1 {
-	@apply flex absolute -bottom-40 right-10;
+	@apply md:hidden lg:block absolute -bottom-40 right-10;
 }
 
 .img2 {
-	@apply flex w-52 h-72 z-10 absolute top-16 left-0;
+	@apply lg:block md:hidden w-52 h-72 z-10 absolute top-16 left-0;
 }

@@ -3,7 +3,7 @@
 }
 
 .about > h1 {
-	@apply font-medium mb-10 text-3xl p-4 ml-4 text-gray-800 text-left w-full;
+	@apply font-medium mb-10 text-3xl pl-8 text-gray-800 text-left w-full;
 }
 
 .about1 {

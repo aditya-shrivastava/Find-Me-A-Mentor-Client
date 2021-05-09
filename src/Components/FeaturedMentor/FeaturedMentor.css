@@ -1,23 +1,23 @@
-.featured-mentor{
-    @apply relative justify-end flex h-auto w-1/2 pt-2 m-4 ;
+.featured-mentor {
+	@apply relative justify-end flex h-auto w-1/2 pt-2 m-4;
 }
 
-.rating{
-    @apply box-border absolute left-32 z-30 top-8;
+.rating {
+	@apply box-border absolute left-32 z-30 top-8;
 }
 
-.rating2{
-    @apply box-border absolute left-52 z-30 top-36;
+.rating2 {
+	@apply box-border absolute left-52 z-30 top-36;
 }
 
-.summary{
-    @apply box-border absolute left-52 z-30 bottom-12;
+.summary {
+	@apply box-border absolute left-52 z-30 bottom-12;
 }
 
 .featured-mentor > img {
-    @apply justify-end object-cover pr-8 z-20;
+	@apply justify-end object-cover pr-8 z-20;
 }
 
-.img3{
-    @apply flex w-40 h-44 absolute left-80 top-0 z-10;
+.img3 {
+	@apply md:hidden lg:block w-40 h-44 absolute left-80 top-0 z-10;
 }

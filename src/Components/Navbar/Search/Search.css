@@ -1,3 +1,7 @@
 .search {
-    @apply bg-brgreen-100;
+	@apply w-96 lg:w-2/4;
+}
+
+.search > input {
+	@apply opacity-40 bg-gray-50 flex-grow w-full rounded outline-none p-1 duration-200 focus:opacity-100 focus:bg-white focus:text-black;
 }
