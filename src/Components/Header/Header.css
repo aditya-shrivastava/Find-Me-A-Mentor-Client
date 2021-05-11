@@ -1,9 +1,9 @@
 .header {
-	@apply bg-brgreen p-10 flex lg:px-32 flex-row items-center space-x-4;
+	@apply bg-brgreen py-14 flex lg:px-32 relative flex-row items-center;
 }
 
 .Introduction {
-	@apply flex-col flex box-border bg-transparent z-30 text-white p-4 m-4;
+	@apply flex-col flex relative z-30 text-white p-4;
 }
 
 .Introduction > h1 {
@@ -11,25 +11,25 @@
 }
 
 .Introduction > p {
-	@apply font-light tracking-normal relative text-lg pl-1;
+	@apply font-light tracking-normal text-lg;
 }
 
-.div{
+.drop-down {
 	@apply flex items-center mt-6 justify-items-center;
 }
 
-.div > Button {
-	@apply text-brgreen items-center focus:outline-none hover:bg-gray-100 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
+.drop-down > Button {
+	@apply text-brgreen z-10 items-center focus:outline-none hover:bg-gray-100 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
 }
 
-.select > select{
+.select > select {
 	@apply bg-white text-gray-700 text-lg w-96 h-14 shadow-2xl rounded-sm px-10 py-2;
 }
 
-.img1{
-	@apply flex absolute z-10 bottom-52 right-2/3 ;
+.img1 {
+	@apply md:hidden lg:block absolute -bottom-40 right-10;
 }
 
-.img2{
-	@apply flex w-52 h-72 z-10 absolute top-16 left-0;
+.img2 {
+	@apply lg:block md:hidden w-52 h-72 z-10 absolute top-16 left-0;
 }

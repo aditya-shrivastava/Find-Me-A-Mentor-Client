@@ -1,33 +1,39 @@
-.login{
-    @apply bg-white p-3;
+.login {
+	@apply bg-white p-2;
 }
-.head{
-    @apply text-brgreen pt-2 pb-5 flex justify-center;
+
+.head {
+	@apply pt-2 mb-8 text-black flex flex-col justify-center w-full items-center;
 }
-.top1{
-    @apply flex justify-center;
+
+.head > h3 {
+	@apply text-brgreen mb-8;
 }
-.top1 >span {
-    @apply text-xl;
+
+.head > h1 {
+	@apply font-semibold text-xl;
 }
-.top2{
-    @apply flex justify-center pb-5;
+
+.login-form {
+	@apply w-full flex flex-col items-center;
 }
-.Email{
-    @apply p-2 font-semibold;
+
+.input-field {
+	@apply flex flex-col w-96 font-semibold mb-6;
 }
-.Password{
-    @apply p-2 font-semibold;
+
+.input-field > input {
+	@apply p-2 rounded-md bg-gray-200;
 }
-.Button{
-    @apply p-2 pt-4 flex justify-center ;  
+
+.login-form > Button {
+	@apply text-white py-2 mt-4 bg-blue-500 w-1/2 hover:bg-blue-700;
 }
-.Button > Button {
-    @apply text-white ;
+
+.lower {
+	@apply pt-10 pb-2 flex justify-center text-sm space-x-2;
 }
-.lower{
-    @apply pt-10 pb-2 flex justify-center text-sm space-x-2;
-}
-.create{
-    @apply text-blue-500;
+
+.create {
+	@apply text-blue-500 font-medium cursor-pointer hover:text-green-600 duration-200;
 }

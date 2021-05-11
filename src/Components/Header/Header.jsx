@@ -10,15 +10,15 @@ import img2 from '../../Assets/Group 5.svg'
 const Header = () => {
     return (
         <React.Fragment>
-            <div className="header">
-                <img src= {img2} alt="" className="img2"/>
+            <div className="header" id='header'>
+                <img src= {img2} alt="bg-svg" className="img2"/>
                 <div className='Introduction'>
                     <h1>
                         Confused about your next move?
                     </h1>
                     <p>SignUp and get a personalized session with experts from your field</p>
                         
-                    <div className="div">
+                    <div className="drop-down">
                         <span className="select">
                         <select name="Select Category" id="categories">
                         <option>Select Category</option>
@@ -32,10 +32,8 @@ const Header = () => {
                         Find Mentor
                         </Button>
                     </div>  
-
+                    <img src={img1} alt="bg-svg" className="img1"/>  
                     </div>
-                    
-                    <img src={img1} alt="" className="img1"/>  
                 
                 <FeaturedMentor />
             </div>

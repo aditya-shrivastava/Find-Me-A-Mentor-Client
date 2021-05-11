@@ -1,13 +1,13 @@
 .about {
-	@apply h-auto flex flex-col space-y-12 items-center justify-center;
+	@apply h-auto flex my-32 flex-col space-y-12 items-center justify-center;
 }
 
 .about > h1 {
-	@apply font-medium text-3xl p-4 ml-4 text-gray-800 text-left w-full;
+	@apply font-medium mb-10 text-3xl pl-8 text-gray-800 text-left w-full;
 }
 
 .about1 {
-	@apply flex flex-row items-center px-32 py-10 justify-center ;
+	@apply flex flex-row items-center px-32 py-10 justify-center;
 }
 
 .blue_box {
@@ -19,10 +19,10 @@
 }
 
 .about1_info {
-	@apply flex flex-col w-2/3 h-4/5 my-16 ;
+	@apply flex flex-col w-2/3 h-4/5 my-16;
 }
 
-.about1_info >h1 {
+.about1_info > h1 {
 	@apply text-white font-medium text-4xl mt-8 mb-10;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .about2 {
-	@apply flex flex-row items-center px-32 py-10 justify-center ;
+	@apply flex flex-row items-center px-32 py-10 justify-center;
 }
 
 .green_box {
@@ -43,10 +43,10 @@
 }
 
 .about2_info {
-	@apply flex flex-col w-2/3 h-4/5 my-16 ;
+	@apply flex flex-col w-2/3 h-4/5 my-16;
 }
 
-.about2_info >h1 {
+.about2_info > h1 {
 	@apply text-white font-medium text-4xl mt-8 mb-10;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .about3 {
-	@apply flex flex-row items-center px-32 py-10 justify-center ;
+	@apply flex flex-row items-center px-32 py-10 justify-center;
 }
 
 .orange_box {
@@ -67,10 +67,10 @@
 }
 
 .about3_info {
-	@apply flex flex-col w-2/3 h-4/5 my-20 ;
+	@apply flex flex-col w-2/3 h-4/5 my-20;
 }
 
-.about3_info >h1 {
+.about3_info > h1 {
 	@apply text-white font-medium text-4xl mt-8 mb-10;
 }
 

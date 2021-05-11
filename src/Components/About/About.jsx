@@ -7,7 +7,7 @@ import about3 from "../../Assets/about 3.svg"
 
 const About = () => {
     return (
-        <div className='about'>
+        <div className='about' id='about'>
             <h1>Why should you join us ?</h1>
             <div className="about1">
                  

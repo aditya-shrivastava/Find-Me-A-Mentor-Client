@@ -1,37 +1,42 @@
 import React , {useState} from 'react';
-import Button from "@material-ui/core/Button";
 import Search from './Search/Search';
-import Login from '../Login/login';
 import Popup from '../Popup';
+import UserAvatar from './UserAvatar/UserAvatar';
+
 import './Navbar.css';
+
+import { Link } from 'react-scroll';
+import { NavLink } from 'react-router-dom';
+
+import Button from "@material-ui/core/Button";
 
 
 const Navbar = () => {
-    const [openPopup, setOpenPopup] = useState(false)
+    const [openPopup, setOpenPopup] = useState(false);
 
     return (
         <div className='navbar'>
             <div className='left'>
-                <a href="/"> Find Me A Mentor </a>
+                <NavLink className='link' to='/'> Find Me A Mentor </NavLink>
             </div>
-            <div className='center'>
-                <Search />
-            </div>
-
+            
+            <Search />
+            
             <div className='right'>
-                <a href="/">
-                    <span>Home</span>
-                </a>
-                <a href="/about">
-                    <span>About</span>
-                </a>
-                <a href="/team">
-                    <span>Our Team</span>
-                </a>
-                <Button style={{ color: '#1DB954' }} onClick={() => setOpenPopup(true)}>
-                    <span>Login</span>
+                <NavLink className='link' to='/'>
+                    Home
+                </NavLink>
+                <Link smooth className='link' to='about'>
+                    About
+                </Link>
+                <NavLink className='link' to="/team">
+                    Our Team
+                </NavLink>
+                {/* <UserAvatar /> */}
+                <Button onClick={() => setOpenPopup(true)}>
+                    Login
                 </Button>
-                <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}> <Login/></Popup>
+                <Popup openPopup={openPopup} setOpenPopup={setOpenPopup} />
             </div>
         </div>
     )

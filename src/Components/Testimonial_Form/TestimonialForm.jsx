@@ -4,24 +4,16 @@ import './TestimonialForm.css'
 function TestimonialForm() {
     return (
         <div className="testimonialForm">
-
-            <div className="form">
-                <p>Tell us about your experience, so we can improve</p>
-
-                    <form>
-                        <div>
-                            <textarea type="text" id="testimonial" rows="8" cols="100" className="textarea"/>
+                    <form className='form'>
+                        <p>Tell us about your experience, so we can improve</p>
+                        <div className='form-input'>
+                            <textarea type="text"/>
+                            <span>0/140</span>
                         </div>
-                    </form>
-
-                    <div className="button_style">
-                        <button type= "submit">
+                        <button className='submit-btn' type= "submit">
                             SUBMIT
                         </button>
-                    </div>
-                    
-            </div>
-
+                    </form>
         </div>
     )
 }

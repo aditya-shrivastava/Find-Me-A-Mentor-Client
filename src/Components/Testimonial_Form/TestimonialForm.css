@@ -1,22 +1,23 @@
 .testimonialForm {
-    @apply flex flex-col w-full h-full justify-center items-center;
+	@apply flex flex-col w-full justify-center items-center my-32;
 }
 
 .form {
-	@apply flex flex-col bg-brgreen w-3/4 p-8 h-auto justify-center items-center;
+	@apply flex flex-col bg-brgreen w-1/2 p-8 h-auto;
 }
 
 .form > p {
-    @apply text-white font-medium text-xl text-left;
+	@apply text-white font-medium text-xl text-left mb-4;
 }
 
-.button_style{
-    @apply w-4/5 px-20 h-auto flex justify-end ;
-}
-.button_style > button {
-    @apply bg-white text-brgreen font-medium focus:outline-none hover:bg-gray-100 text-xl text-center rounded shadow py-4 px-12 m-6;
+.submit-btn {
+	@apply bg-white w-40 text-brgreen font-medium focus:outline-none hover:bg-gray-300 text-center rounded shadow py-2;
 }
 
-.textarea {
-    @apply bg-white rounded-sm text-gray-600 p-8 focus:outline-none focus:ring-1 focus:ring-green-500;
+.form-input > textarea {
+	@apply bg-white rounded-sm w-full h-48 text-gray-600 p-2 focus:outline-none focus:ring-1 focus:ring-green-500;
+}
+
+.form-input > span {
+	@apply w-full flex justify-end;
 }

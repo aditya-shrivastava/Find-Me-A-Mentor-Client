@@ -5,6 +5,7 @@ import './Testimonials.css';
 const Testimonials = () => {
     return (
         <div className='testimonials'>
+            <h1>People love what we do.</h1>
             <div className="cards">
                 <TestimonialCard />
                 <TestimonialCard />

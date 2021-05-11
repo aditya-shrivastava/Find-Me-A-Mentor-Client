@@ -4,7 +4,7 @@ import StarRateIcon from '@material-ui/icons/StarRate';
 
 const RatingCard = () => {
     return (
-        <container className='rating-card'>
+        <div className='rating-card'>
             <div className='starIcon'>
                 <StarRateIcon />
                 <StarRateIcon />
@@ -17,7 +17,7 @@ const RatingCard = () => {
                 Riddhi Pal
             </p>
             
-        </container>
+        </div>
     )
 }
 

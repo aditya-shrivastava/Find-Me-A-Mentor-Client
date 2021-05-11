@@ -1,14 +1,13 @@
-
-.individual_testimonial{
+.individual_testimonial {
 	@apply bg-white shadow-lg min-w-max h-44 m-4 rounded-l-lg flex;
 }
 
-.review{
+.review {
 	@apply flex flex-col pl-4 pr-1 py-4;
 }
 
 .review > p {
-	@apply text-left mt-2 flex w-80 text-sm font-light;
+	@apply text-left text-black mt-2 flex w-80 text-sm font-light;
 }
 
 .review > h4 {
