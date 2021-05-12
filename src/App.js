@@ -23,7 +23,7 @@ function App() {
 					<Route exact path="/team" >
 						<OurTeam />
 					</Route>
-					<Route>
+					<Route path="/profile">
 						<Profile />
 					</Route>
 					<Route path="*" >
