@@ -1,7 +1,7 @@
 import React , {useState} from 'react';
 import Search from './Search/Search';
 import Popup from '../Popup';
-import UserAvatar from './UserAvatar/UserAvatar';
+//import UserAvatar from './UserAvatar/UserAvatar';
 
 import './Navbar.css';
 

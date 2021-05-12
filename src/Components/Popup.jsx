@@ -1,8 +1,8 @@
 import { Dialog, DialogContent } from '@material-ui/core';
 import React, { useState } from 'react';
 
-import Login from './Login/Login';
-import SignUp from './SignUp/SignUp';
+import Login from './Login/login';
+import SignUp from './SignUp/signup';
 
 
 const Popup = ({ openPopup, setOpenPopup }) => {

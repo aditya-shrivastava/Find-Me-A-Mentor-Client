@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Button } from '@material-ui/core';
-import './Login.css';
+import './login.css';
 
 
 const Login = ({setIsLogin }) => {

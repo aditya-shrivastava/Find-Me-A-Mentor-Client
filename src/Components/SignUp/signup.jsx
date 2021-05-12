@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Button} from '@material-ui/core';
-import './SignUp.css';
+import './signup.css';
 
 const SignUp = ({ setIsLogin }) => {
     const [username, setUsername] = useState('');
