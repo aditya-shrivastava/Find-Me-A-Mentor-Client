@@ -18,10 +18,6 @@ const Navbar = () => {
     const [openPopup, setOpenPopup] = useState(false);
     const user = useSelector(selectUser);
 
-    useEffect(() => {
-        console.log('User State Changed!');
-    }, [user]);
-
     return (
         <div className='navbar'>
             <div className='left'>

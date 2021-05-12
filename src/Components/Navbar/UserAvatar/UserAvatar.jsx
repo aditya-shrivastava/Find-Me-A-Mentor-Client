@@ -43,7 +43,7 @@ const UserAvatar = ({ user }) => {
                     <MenuItem><SettingsIcon style={{color:'#1DB954'}}/> Settings </MenuItem>
                     <MenuItem onClick={handleLogout}><ExitToAppIcon style={{color:'#1DB954'}}/>Logout</MenuItem>
                 </Menu>
-                    <Avatar src={`http://localhost:5000/${user.image}`} style={{borderColor: 'white', borderWidth:2}}/>
+                    <Avatar src={user.image && `http://localhost:5000/${user.image}`} style={{borderColor: 'white', borderWidth:2}}/>
                 </Badge>
         </div>
     )
