@@ -11,7 +11,7 @@
 }
 
 .right {
-	@apply text-white p-1 space-x-10;
+	@apply text-white p-1 flex items-center space-x-10;
 }
 
 .right > Button {

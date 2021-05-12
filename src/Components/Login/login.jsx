@@ -2,16 +2,31 @@ import React, {useState} from 'react';
 import { Button } from '@material-ui/core';
 import './Login.css';
 
+import axios from '../../api/axios';
 
-const Login = ({setIsLogin }) => {
+import { useDispatch } from 'react-redux';
+import { login } from '../../features/userSlice';
+
+const Login = ({setIsLogin, setOpenPopup }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
 
-    const handleLogin = e => {
+    const handleLogin = async e => {
         e.preventDefault();
-        console.log(email, password);
-        setEmail('');
-        setPassword('');
+        try {
+            const response = await axios.post('/auth/login',{email, password});            
+            const { user } = response.data;
+            
+            dispatch(login(user));
+            
+            setEmail('');
+            setPassword('');
+            setOpenPopup(false);
+        } catch (err) {
+            const { error } = err.response.data;
+            console.log('error: ', error);
+        }
     }
 
     return (

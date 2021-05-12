@@ -16,7 +16,7 @@ const Popup = ({ openPopup, setOpenPopup }) => {
     return (
         <Dialog open={openPopup} onClose={handleClose}>
             <DialogContent>
-                {isLogin ? <Login setIsLogin={setIsLogin} /> : <SignUp setIsLogin={setIsLogin} />}
+                {isLogin ? <Login setOpenPopup={setOpenPopup} setIsLogin={setIsLogin} /> : <SignUp setOpenPopup={setOpenPopup} setIsLogin={setIsLogin} />}
             </DialogContent>
         </Dialog>
     )

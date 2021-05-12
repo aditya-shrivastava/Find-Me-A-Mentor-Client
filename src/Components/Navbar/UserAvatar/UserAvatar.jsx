@@ -9,10 +9,13 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import './UserAvatar.css'
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../features/userSlice';
 
-const UserAvatar = () => {
+const UserAvatar = ({ user }) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+    const dispatch = useDispatch();
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -21,6 +24,10 @@ const UserAvatar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleLogout = () => {
+        dispatch(logout());
+    }
 
     return (
         <div className='user_avatar'>
@@ -34,9 +41,9 @@ const UserAvatar = () => {
                 <Menu id='dropdown' anchorEl={anchorEl} keepMounted open={open} onClose={handleClose}>
                     <MenuItem><AccountCircleIcon style={{color:'#1DB954'}} />Profile</MenuItem>
                     <MenuItem><SettingsIcon style={{color:'#1DB954'}}/> Settings </MenuItem>
-                    <MenuItem><ExitToAppIcon style={{color:'#1DB954'}}/>Logout</MenuItem>
+                    <MenuItem onClick={handleLogout}><ExitToAppIcon style={{color:'#1DB954'}}/>Logout</MenuItem>
                 </Menu>
-                    <Avatar style={{borderColor: 'white', borderWidth:2}}/>
+                    <Avatar src={`http://localhost:5000/${user.image}`} style={{borderColor: 'white', borderWidth:2}}/>
                 </Badge>
         </div>
     )
