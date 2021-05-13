@@ -1,0 +1,7 @@
+.notif__block{
+    @apply flex flex-row bg-brgreen w-full h-14 my-4 rounded py-4 px-8 items-center justify-evenly;
+}
+
+.notif__block > P {
+    @apply text-white text-xl;
+}
