@@ -11,7 +11,7 @@
 }
 
 .submit-btn {
-	@apply bg-white w-40 text-brgreen font-medium focus:outline-none hover:bg-gray-300 text-center rounded shadow py-2;
+	@apply bg-white w-40 text-brgreen font-medium focus:outline-none hover:bg-green-600 hover:text-white text-center rounded shadow py-2;
 }
 
 .form-input > textarea {
@@ -19,5 +19,5 @@
 }
 
 .form-input > span {
-	@apply w-full flex justify-end;
+	@apply w-full flex justify-end text-gray-200;
 }

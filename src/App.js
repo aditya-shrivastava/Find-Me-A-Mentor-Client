@@ -3,6 +3,7 @@ import './App.css';
 import { Footer, Navbar } from './Components';
 import Home from './Pages/Home';
 import OurTeam from './Pages/OurTeam';
+import Profile from './Pages/Profile';
 import Error from './Pages/Error';
 import {
   BrowserRouter as Router,
@@ -21,6 +22,9 @@ function App() {
 					</Route>
 					<Route exact path="/team" >
 						<OurTeam />
+					</Route>
+					<Route path="/profile">
+						<Profile />
 					</Route>
 					<Route path="*" >
 						<Error />
