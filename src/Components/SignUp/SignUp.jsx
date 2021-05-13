@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Button} from '@material-ui/core';
-import './signup.css';
+import './SignUp.css';
 
 import { useDispatch } from 'react-redux';
 import { login } from '../../features/userSlice';

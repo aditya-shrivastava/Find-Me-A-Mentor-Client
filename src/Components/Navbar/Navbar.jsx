@@ -1,14 +1,13 @@
 import React , {useEffect, useState} from 'react';
 import Search from './Search/Search';
 import Popup from '../Popup';
-//import UserAvatar from './UserAvatar/UserAvatar';
+import UserAvatar from './UserAvatar/UserAvatar';
 
 import { selectUser } from '../../features/userSlice';
 import { useSelector } from 'react-redux';
 
 import './Navbar.css';
 
-import { Link } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 
 import Button from "@material-ui/core/Button";
