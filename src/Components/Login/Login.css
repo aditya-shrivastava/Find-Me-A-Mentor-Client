@@ -1,4 +1,4 @@
-.login {
+.login{
 	@apply bg-white p-2;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .login-form > Button {
-	@apply text-white py-2 mt-4 bg-blue-500 w-1/2 hover:bg-blue-700;
+	@apply text-white py-2 mt-4 focus:outline-none bg-blue-500 w-1/2 hover:bg-blue-700;
 }
 
 .lower {

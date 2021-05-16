@@ -19,7 +19,7 @@
 }
 
 .drop-down > Button {
-	@apply text-brgreen z-10 items-center focus:outline-none hover:bg-gray-100 h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
+	@apply text-brgreen z-10 items-center focus:outline-none hover:bg-green-600 hover:text-white h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
 }
 
 .select > select {

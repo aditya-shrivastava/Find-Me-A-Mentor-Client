@@ -1,11 +1,14 @@
-import React , {useState} from 'react';
+import React , {useEffect, useState} from 'react';
 import Search from './Search/Search';
 import Popup from '../Popup';
 import UserAvatar from './UserAvatar/UserAvatar';
 
+import { selectUser } from '../../features/userSlice';
+import { useSelector } from 'react-redux';
+
 import './Navbar.css';
 
-import { Link } from 'react-scroll';
+
 import { NavLink } from 'react-router-dom';
 
 import Button from "@material-ui/core/Button";
@@ -13,6 +16,7 @@ import Button from "@material-ui/core/Button";
 
 const Navbar = () => {
     const [openPopup, setOpenPopup] = useState(false);
+    const user = useSelector(selectUser);
 
     return (
         <div className='navbar'>
@@ -26,16 +30,12 @@ const Navbar = () => {
                 <NavLink className='link' to='/'>
                     Home
                 </NavLink>
-                <Link smooth className='link' to='about'>
-                    About
-                </Link>
                 <NavLink className='link' to="/team">
                     Our Team
                 </NavLink>
-                {/* <UserAvatar /> */}
-                <Button onClick={() => setOpenPopup(true)}>
+                {user ? <UserAvatar user={user} /> : <Button onClick={() => setOpenPopup(true)}>
                     Login
-                </Button>
+                </Button>}
                 <Popup openPopup={openPopup} setOpenPopup={setOpenPopup} />
             </div>
         </div>

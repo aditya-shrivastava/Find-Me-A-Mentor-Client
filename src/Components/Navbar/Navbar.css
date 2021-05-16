@@ -11,9 +11,9 @@
 }
 
 .right {
-	@apply text-white p-1 space-x-10;
+	@apply text-white p-1 flex items-center space-x-10;
 }
 
 .right > Button {
-	@apply bg-white px-4 text-brgreen hover:bg-green-600 hover:text-white;
+	@apply bg-white px-4 text-brgreen focus:outline-none hover:bg-green-600 hover:text-white;
 }

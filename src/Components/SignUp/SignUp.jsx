@@ -2,22 +2,41 @@ import React, {useState} from 'react';
 import { Button} from '@material-ui/core';
 import './SignUp.css';
 
-const SignUp = ({ setIsLogin }) => {
+import { useDispatch } from 'react-redux';
+import { login } from '../../features/userSlice';
+
+import { useAuth } from '../../hooks/auth-hook';
+
+const SignUp = ({ setIsLogin, setOpenPopup }) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleSignup = e => {
+    const dispatch = useDispatch();
+    const { isLoading, error, authenticate } = useAuth();
+
+    const handleSignup = async e => {
         e.preventDefault();
-        console.log(username, email, password, confirmPassword);
-        setUsername('');
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
+        try {
+            const user = await authenticate(false, {
+                username, email, password
+            });   
+            dispatch(login(user));    
+        
+            setUsername('');
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
+            setOpenPopup(false);
+        } catch (error) {
+            
+        }
     }
 
     return (
+        <React.Fragment>
+            {error && <h1 className='text-red-500 text-center text-lg'>{error}</h1>}
         <div className='signup'>
             <div className='head'>
                 <h3>Find Me A Mentor</h3>
@@ -49,6 +68,7 @@ const SignUp = ({ setIsLogin }) => {
                 <div className='create' onClick={() => setIsLogin(true)}> Login </div>
             </div>      
         </div>
+        </React.Fragment>
     )
 }
 export default SignUp

@@ -2,20 +2,35 @@ import React, {useState} from 'react';
 import { Button } from '@material-ui/core';
 import './Login.css';
 
+import { useDispatch } from 'react-redux';
+import { login } from '../../features/userSlice';
 
-const Login = ({setIsLogin }) => {
+import {useAuth} from '../../hooks/auth-hook';
+
+const Login = ({setIsLogin, setOpenPopup }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { isLoading, error, authenticate } = useAuth();
 
-    const handleLogin = e => {
+    const dispatch = useDispatch();
+
+    const handleLogin = async e => {
         e.preventDefault();
-        console.log(email, password);
-        setEmail('');
-        setPassword('');
+        try {
+            const user = await authenticate(true, {email, password});   
+            dispatch(login(user));    
+        
+            setEmail('');
+            setPassword('');
+            setOpenPopup(false);
+        } catch (error) {
+            
+        }
     }
 
     return (
-
+            <React.Fragment>
+                {error && <h1 className='text-red-500 text-center text-lg'>{error}</h1>}
             <div className='login'>
                 <div className='head'>
                     <h3>Find Me A Mentor</h3>
@@ -38,6 +53,7 @@ const Login = ({setIsLogin }) => {
                     <div className='create' onClick={() => setIsLogin(false)}>Create Account</div>
                 </div>
             </div>
+            </React.Fragment>
         
     )
 }

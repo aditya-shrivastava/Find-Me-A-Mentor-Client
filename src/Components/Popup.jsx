@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent } from '@material-ui/core';
 import React, { useState } from 'react';
 
@@ -16,7 +17,7 @@ const Popup = ({ openPopup, setOpenPopup }) => {
     return (
         <Dialog open={openPopup} onClose={handleClose}>
             <DialogContent>
-                {isLogin ? <Login setIsLogin={setIsLogin} /> : <SignUp setIsLogin={setIsLogin} />}
+                {isLogin ? <Login setOpenPopup={setOpenPopup} setIsLogin={setIsLogin} /> : <SignUp setOpenPopup={setOpenPopup} setIsLogin={setIsLogin} />}
             </DialogContent>
         </Dialog>
     )
