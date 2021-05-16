@@ -29,7 +29,7 @@ const DashBoard = () => {
                     <div className='MessageIcon'>
                         <Badge overlap='circle' anchorOrigin={{ vertical: 'top', horizontal: 'right'}}>
                             <button className='MessageIconbtn'>
-                                <ChatIcon style={{ color: '#757171', fontSize: 30 }} />
+                                <ChatIcon style={{ color: '#757171', fontSize: 35 }} />
                             </button>
                         </Badge>
                         <span>No new messages!</span>
