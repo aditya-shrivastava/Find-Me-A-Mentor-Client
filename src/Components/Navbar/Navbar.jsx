@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 import './Navbar.css';
 
+
 import { NavLink } from 'react-router-dom';
 
 import Button from "@material-ui/core/Button";
@@ -29,9 +30,6 @@ const Navbar = () => {
                 <NavLink className='link' to='/'>
                     Home
                 </NavLink>
-                <Link smooth className='link' to='about'>
-                    About
-                </Link>
                 <NavLink className='link' to="/team">
                     Our Team
                 </NavLink>
