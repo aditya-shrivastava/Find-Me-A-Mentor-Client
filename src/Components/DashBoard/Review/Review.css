@@ -1,0 +1,8 @@
+.Review{
+    @apply p-2 font-normal bg-gray-100 rounded-md;
+}
+
+.heading{
+    @apply pb-4;
+}
+

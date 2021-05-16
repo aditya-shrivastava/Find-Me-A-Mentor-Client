@@ -1,7 +1,7 @@
 import React , {useEffect, useState} from 'react';
 import Search from './Search/Search';
 import Popup from '../Popup';
-//import UserAvatar from './UserAvatar/UserAvatar';
+import UserAvatar from './UserAvatar/UserAvatar';
 
 import { selectUser } from '../../features/userSlice';
 import { useSelector } from 'react-redux';
