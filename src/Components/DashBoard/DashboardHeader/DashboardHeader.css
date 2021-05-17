@@ -1,41 +1,38 @@
-.DashBoardHeader{
-    @apply p-4 flex justify-between ;
-}
-.leftcard{
-    @apply flex ;
-}
-.UserName > h2{
-    @apply flex text-3xl font-medium px-10 ;
+.DashboardHeader {
+	@apply p-4 flex justify-between;
 }
 
-.Icon{
-    @apply px-10 ;
+.leftcard {
+	@apply flex;
 }
 
-.Icon > Span {
-    @apply text-brgreen font-medium ;
+.user-details > h2 {
+	@apply flex text-3xl font-medium px-10;
 }
 
-.Bio{
-    @apply px-10 pt-5 ;
+.icon {
+	@apply px-10 text-brgreen font-medium;
 }
 
-.rightcard{
-    @apply pr-24;
+.user-details > p {
+	@apply px-10 pt-5 text-black;
 }
-.MessageIcon{
-    @apply pb-10;
+
+.rightcard {
+	@apply pr-24;
+}
+.MessageIcon {
+	@apply pb-10;
 }
 
 .MessageIconbtn {
-    @apply bg-gray-100 rounded-full focus:outline-none w-12 h-12 ;
+	@apply bg-gray-100 rounded-full focus:outline-none w-12 h-12;
 }
 
 .MessageIcon > span {
-    @apply text-sm px-2;
+	@apply text-sm px-2;
 }
 
-.lowercard{
-    @apply flex ;
+.lowercard {
+	@apply flex;
 }
-

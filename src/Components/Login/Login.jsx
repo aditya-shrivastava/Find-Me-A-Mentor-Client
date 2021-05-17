@@ -17,7 +17,9 @@ const Login = ({setIsLogin, setOpenPopup }) => {
     const handleLogin = async e => {
         e.preventDefault();
         try {
-            const user = await authenticate(true, {email, password});   
+            const {user, token} = await authenticate(true, {email, password});   
+            
+            localStorage.setItem('user', JSON.stringify({user, token}));
             dispatch(login(user));    
         
             setEmail('');

@@ -19,10 +19,12 @@ const SignUp = ({ setIsLogin, setOpenPopup }) => {
     const handleSignup = async e => {
         e.preventDefault();
         try {
-            const user = await authenticate(false, {
+            const {user, token} = await authenticate(false, {
                 username, email, password
             });   
-            dispatch(login(user));    
+
+            localStorage.setItem('user', JSON.stringify({user, token}));
+            dispatch(login(user));
         
             setUsername('');
             setEmail('');

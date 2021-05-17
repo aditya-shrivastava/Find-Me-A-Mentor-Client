@@ -24,10 +24,8 @@ export const useAuth = () => {
 				});
 			}
 
-			const { user } = response.data;
-
 			setIsLoading(false);
-			return user;
+			return response.data;
 		} catch (err) {
 			const { error } = err.response.data;
 			setError(error);

@@ -1,28 +1,29 @@
 import React from 'react';
 import './DashboardHeader.css';
+
 import Avatar from '@material-ui/core/Avatar';
 import TurnedInIcon from '@material-ui/icons/TurnedIn';
 import ChatIcon from '@material-ui/icons/Chat';
 import Badge from '@material-ui/core/Badge';
-import Notification from '../Notification/Notification';
-import Review from '../Review/Review';
+
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../features/userSlice';
 
 
-
-const DashBoard = () => {
+const DashboardHeader = () => {
+    const user = useSelector(selectUser);
 
     return (
-        <div className='DashBoard'>
-            <div className='DashBoardHeader'>
+            <div className='DashboardHeader'>
                 <div className='leftcard'>
-                    <div className='Avatar'> <Avatar style={{ width: 180, height: 180 }} /></div>
-                    <div className='UserName'>
-                        <h2>Jessica James</h2>
-                        <div className='Icon'>
+                    <Avatar src={user.image && `http://localhost:5000/${user.image}`} style={{ width: 100, height: 100 }} />
+                    <div className='user-details'>
+                        <h2>{user?.username || 'Jessica James'}</h2>
+                        <div className='icon'>
                             <TurnedInIcon style={{ color: '#13C953', fontSize: 35, borderColor: '#E9E9E9', }} />
-                            <span>Digital Creator</span>
+                            {user?.category || 'Digital Creator'}
                         </div>
-                        <div className='Bio'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <p>{user?.bio || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}</p>
                     </div>
                 </div>
                 <div className='rightcard'>
@@ -38,13 +39,8 @@ const DashBoard = () => {
                 </div>
                 
             </div>
-            <div className='lowercard'>
-                <Notification />
-                <Review />
-            </div>
-        </div>
     )
 
 }
 
-export default DashBoard
+export default DashboardHeader;
