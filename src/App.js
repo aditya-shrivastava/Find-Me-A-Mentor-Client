@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -13,17 +13,42 @@ import { Footer, Navbar } from './Components';
 import { useDispatch } from 'react-redux';
 import { login, logout } from './features/userSlice';
 
+let logoutTimer;
+
 function App() {
+	const [token, setToken] = useState();
+	const [tokenExpiration, setTokenExpiration] = useState();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const user = JSON.parse(localStorage.getItem('user'));
-		if (!user) {
-			dispatch(logout());
-		} else {
-			dispatch(login(user.user));
+		const userData = JSON.parse(localStorage.getItem('userData'));
+		if (userData) {
+			const { user, token, expiration } = userData;
+			if (user && token && new Date(expiration) > new Date()) {
+				setToken(token);
+				setTokenExpiration(expiration);
+				dispatch(
+					login({
+						user: user,
+						token: token,
+						expiration: new Date(expiration).toISOString(),
+					})
+				);
+			}
 		}
-	}, []);
+	}, [dispatch]);
+
+	useEffect(() => {
+		if (token && tokenExpiration) {
+			const remainingTime =
+				new Date(tokenExpiration).getTime() - new Date().getTime();
+			logoutTimer = setTimeout(() => {
+				dispatch(logout());
+			}, remainingTime);
+		} else {
+			clearTimeout(logoutTimer);
+		}
+	}, [token, tokenExpiration, dispatch]);
 
 	return (
 		<div className='app'>

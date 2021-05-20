@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import { Button} from '@material-ui/core';
 import './SignUp.css';
 
-import { useDispatch } from 'react-redux';
-import { login } from '../../features/userSlice';
+
 
 import { useAuth } from '../../hooks/auth-hook';
 
@@ -13,18 +12,14 @@ const SignUp = ({ setIsLogin, setOpenPopup }) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const dispatch = useDispatch();
     const { isLoading, error, authenticate } = useAuth();
 
     const handleSignup = async e => {
         e.preventDefault();
         try {
-            const {user, token} = await authenticate(false, {
+            await authenticate(false, {
                 username, email, password
             });   
-
-            localStorage.setItem('user', JSON.stringify({user, token}));
-            dispatch(login(user));
         
             setUsername('');
             setEmail('');

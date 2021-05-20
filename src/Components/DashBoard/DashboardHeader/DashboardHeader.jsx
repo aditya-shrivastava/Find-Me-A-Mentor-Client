@@ -11,12 +11,12 @@ import { selectUser } from '../../../features/userSlice';
 
 
 const DashboardHeader = () => {
-    const user = useSelector(selectUser);
+    const {user} = useSelector(selectUser);
 
     return (
             <div className='DashboardHeader'>
                 <div className='leftcard'>
-                    <Avatar src={user.image && `http://localhost:5000/${user.image}`} style={{ width: 100, height: 100 }} />
+                    <Avatar src={user?.image && `http://localhost:5000/${user.image}`} style={{ width: 100, height: 100 }} />
                     <div className='user-details'>
                         <h2>{user?.username || 'Jessica James'}</h2>
                         <div className='icon'>

@@ -16,7 +16,7 @@ import Button from "@material-ui/core/Button";
 
 const Navbar = () => {
     const [openPopup, setOpenPopup] = useState(false);
-    const user = useSelector(selectUser);
+    const {user} = useSelector(selectUser);
 
     return (
         <div className='navbar'>

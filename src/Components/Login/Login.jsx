@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import { Button } from '@material-ui/core';
 import './Login.css';
 
-import { useDispatch } from 'react-redux';
-import { login } from '../../features/userSlice';
-
 import {useAuth} from '../../hooks/auth-hook';
 
 const Login = ({setIsLogin, setOpenPopup }) => {
@@ -12,15 +9,10 @@ const Login = ({setIsLogin, setOpenPopup }) => {
     const [password, setPassword] = useState('');
     const { isLoading, error, authenticate } = useAuth();
 
-    const dispatch = useDispatch();
-
     const handleLogin = async e => {
         e.preventDefault();
         try {
-            const {user, token} = await authenticate(true, {email, password});   
-            
-            localStorage.setItem('user', JSON.stringify({user, token}));
-            dispatch(login(user));    
+            await authenticate(true, {email, password});   
         
             setEmail('');
             setPassword('');
