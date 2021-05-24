@@ -1,0 +1,35 @@
+.UpdateProfile{
+    @apply p-2 ;
+}
+
+.ProfilePopUp {
+    @apply font-semibold;
+}
+
+.ProfilePopUp > h1{
+    @apply p-2 flex justify-center;
+}
+
+.edit-profile {
+	@apply w-full flex flex-col items-center;
+}
+
+.input-field {
+    @apply flex flex-col w-96 mb-6
+}
+
+.input-field > input {
+	@apply p-2 rounded-md bg-gray-200;
+}
+
+.uploadbtn > Button{
+    @apply bg-blue-400 text-white;
+}
+
+.updatebtn {
+    @apply p-4 flex justify-center;
+}
+
+.updatebtn > Button{
+    @apply p-3 w-48 bg-brgreen text-white;
+}
