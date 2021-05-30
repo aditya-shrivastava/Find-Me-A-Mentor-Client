@@ -32,13 +32,21 @@ const userSlice = createSlice({
 			state.user = null;
 			localStorage.removeItem('userData');
 		},
-		// update: (state, action) => {
-
-		// }
+		update: (state, action) => {
+			state.user = action.payload;
+			const userData = JSON.parse(localStorage.getItem('userData'));
+			localStorage.setItem(
+				'userData',
+				JSON.stringify({
+					...userData,
+					user: action.payload,
+				})
+			);
+		},
 	},
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, update } = userSlice.actions;
 
 export const selectUser = (state) => state.user;
 

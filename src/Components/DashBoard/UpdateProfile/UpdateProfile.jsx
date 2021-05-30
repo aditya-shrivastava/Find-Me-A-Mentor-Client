@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import './UpdateProfile.css';
+import axios from '../../../api/axios';
+
+import { useDispatch } from 'react-redux';
+import { update } from '../../../features/userSlice';
+
 import Avatar from '@material-ui/core/Avatar';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 
 const UpdateProfile = ({ user, open, setOpen }) => {
+	const dispatch = useDispatch();
+	const { token } = JSON.parse(localStorage.getItem('userData'));
+
 	const [name, setName] = useState(user?.username);
 	const [bio, setBio] = useState(user?.bio);
 	const [image, setImage] = useState(
@@ -14,13 +22,46 @@ const UpdateProfile = ({ user, open, setOpen }) => {
 		setOpen(false);
 	};
 
+	const handleFormSubmit = async (e) => {
+		e.preventDefault();
+		let editedData = {};
+
+		if (user.username !== name) editedData.username = name;
+		if (user.bio !== bio) editedData.bio = bio;
+
+		if (Object.keys(editedData).length === 0) {
+			return;
+		}
+
+		try {
+			const response = await axios.patch(
+				`/user/${user.uid}`,
+				editedData,
+				{
+					headers: {
+						Authorization: token,
+					},
+				}
+			);
+
+			const updatedUser = response.data.user;
+
+			dispatch(update(updatedUser));
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	return (
 		<div className='UpdateProfile'>
 			<Dialog open={open} onClose={handleClose}>
 				<DialogContent>
 					<div className='ProfilePopUp'>
 						<h1>Update Your Details</h1>
-						<form className='edit-profile'>
+						<form
+							onSubmit={handleFormSubmit}
+							className='edit-profile'
+						>
 							<div className='input-field'>
 								Username
 								<input
@@ -37,26 +78,26 @@ const UpdateProfile = ({ user, open, setOpen }) => {
 									onChange={(e) => setBio(e.target.value)}
 								/>
 							</div>
+							<div className='uploadimg'>
+								Image
+								<Avatar
+									src={image}
+									variant='square'
+									style={{
+										width: 380,
+										height: 300,
+										borderRadius: 5,
+									}}
+								>
+									<div className='uploadbtn'>
+										<Button>Upload Image</Button>
+									</div>
+								</Avatar>
+							</div>
+							<div className='updatebtn'>
+								<Button type='submit'>Update Profile</Button>
+							</div>
 						</form>
-						<div className='uploadimg'>
-							Image
-							<Avatar
-								src={image}
-								variant='square'
-								style={{
-									width: 380,
-									height: 300,
-									borderRadius: 5,
-								}}
-							>
-								<div className='uploadbtn'>
-									<Button>Upload Image</Button>
-								</div>
-							</Avatar>
-						</div>
-						<div className='updatebtn'>
-							<Button>Update Profile</Button>
-						</div>
 					</div>
 				</DialogContent>
 			</Dialog>
