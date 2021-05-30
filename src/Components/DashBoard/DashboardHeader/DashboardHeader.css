@@ -18,19 +18,8 @@
 	@apply px-10 pt-5 text-black;
 }
 
-.rightcard {
-	@apply pr-24;
-}
-.MessageIcon {
-	@apply pb-10;
-}
-
-.MessageIconbtn {
-	@apply bg-gray-100 rounded-full focus:outline-none w-12 h-12;
-}
-
-.MessageIcon > span {
-	@apply text-sm px-2;
+.icon-button > span {
+	@apply font-medium text-sm;
 }
 
 .lowercard {
