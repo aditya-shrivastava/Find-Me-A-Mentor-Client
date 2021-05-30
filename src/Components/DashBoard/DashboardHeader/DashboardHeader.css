@@ -3,19 +3,23 @@
 }
 
 .leftcard {
-	@apply flex;
+	@apply flex items-center;
+}
+
+.user-details {
+	@apply px-8 flex flex-col justify-center;
 }
 
 .user-details > h2 {
-	@apply flex text-3xl font-medium px-10;
+	@apply flex text-3xl font-medium;
 }
 
 .icon {
-	@apply px-10 text-brgreen font-medium;
+	@apply text-brgreen font-medium;
 }
 
 .user-details > p {
-	@apply px-10 pt-5 text-black;
+	@apply text-black;
 }
 
 .icon-button > span {

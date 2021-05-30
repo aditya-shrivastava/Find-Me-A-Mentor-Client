@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DashboardHeader.css';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -8,9 +8,11 @@ import Badge from '@material-ui/core/Badge';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../features/userSlice';
 import { IconButton } from '@material-ui/core';
+import UpdateProfile from '../UpdateProfile/UpdateProfile';
 
 const DashboardHeader = () => {
 	const { user } = useSelector(selectUser);
+	const [open, setOpen] = useState(false);
 
 	return (
 		<div className='DashboardHeader'>
@@ -29,6 +31,9 @@ const DashboardHeader = () => {
 						{user?.bio ||
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
 					</p>
+					{user?.type === 'mentee' ? (
+						<button className='mentor-btn'>Become Mentor</button>
+					) : null}
 				</div>
 			</div>
 			<div className='rightcard'>
@@ -51,11 +56,19 @@ const DashboardHeader = () => {
 						<span>No new messages!</span>
 					</div>
 					<div className='icon-button'>
-						<IconButton>
+						<IconButton onClick={() => setOpen(true)}>
 							<Edit />
 						</IconButton>
 						<span>Edit user details</span>
 					</div>
+
+					{open && (
+						<UpdateProfile
+							user={user}
+							open={open}
+							setOpen={setOpen}
+						/>
+					)}
 				</div>
 			</div>
 		</div>
