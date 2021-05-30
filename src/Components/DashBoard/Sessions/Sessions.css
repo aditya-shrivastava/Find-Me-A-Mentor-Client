@@ -1,0 +1,15 @@
+.Sessions{
+    @apply flex flex-col border p-8 m-8 h-auto border-8 border-brgreen rounded-xl;
+}
+
+.upcoming_sessions{
+    @apply flex justify-between pb-5;
+}
+
+.upcoming_sessions > h1{
+    @apply text-2xl font-medium ;
+}
+
+.upcoming_sessions > button{
+    @apply focus:outline-none cursor-pointer;
+}
