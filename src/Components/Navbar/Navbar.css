@@ -1,5 +1,5 @@
 .navbar {
-	@apply bg-brgreen py-4 lg:px-32 flex justify-between items-center;
+	@apply bg-brgreen py-4 lg:px-32 md:px-4 flex justify-between items-center;
 }
 
 .left {
@@ -11,9 +11,9 @@
 }
 
 .right {
-	@apply text-white p-1 flex items-center space-x-10;
+	@apply text-white flex items-center space-x-10;
 }
 
 .right > Button {
-	@apply bg-white px-4 text-brgreen focus:outline-none hover:bg-green-600 hover:text-white;
+	@apply bg-white rounded-sm text-brgreen focus:outline-none hover:bg-green-600 hover:text-white;
 }

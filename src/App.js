@@ -12,6 +12,7 @@ import { Footer, Navbar } from './Components';
 
 import { useDispatch } from 'react-redux';
 import { login, logout } from './features/userSlice';
+import Mentors from './Pages/Mentors';
 
 let logoutTimer;
 
@@ -63,6 +64,9 @@ function App() {
 					</Route>
 					<Route path='/profile'>
 						<Profile />
+					</Route>
+					<Route path='/categories/:cname'>
+						<Mentors />
 					</Route>
 					<Route path='*'>
 						<Error />
