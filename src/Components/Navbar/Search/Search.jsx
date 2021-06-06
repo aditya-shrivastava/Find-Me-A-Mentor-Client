@@ -1,18 +1,23 @@
 import React, { useCallback, useState } from 'react';
 import './Search.css';
 
-import axios from '../../../api/axios';
+import api from '../../../api';
 import debounce from 'lodash.debounce';
-import { Link } from 'react-router-dom';
+
+import { useHistory } from 'react-router-dom';
+
+import { SearchOutlined } from '@material-ui/icons';
 
 const Search = () => {
-	const [focused, setFocused] = useState(true);
+	const [showResults, setShowResults] = useState(false);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchResults, setSearchResults] = useState([]);
 
+	const history = useHistory();
+
 	const search = async (term) => {
 		try {
-			const response = await axios.get(`/search?cname=${term}`);
+			const response = await api.get(`/search?cname=${term}`);
 			const { categories } = response.data;
 
 			if (categories.length === 0) {
@@ -20,51 +25,75 @@ const Search = () => {
 			} else {
 				setSearchResults(categories);
 			}
+			setShowResults(true);
 		} catch (error) {
 			console.error(error);
 		}
 	};
 
 	const debouncedSearch = useCallback(
-		() => debounce((term) => search(term), 1000),
+		debounce((term) => search(term), 1000),
 		[]
 	);
 
 	const handleChange = (e) => {
 		setSearchTerm(e.target.value);
-		debouncedSearch(searchTerm);
+		if (e.target.value !== '') {
+			debouncedSearch(e.target.value);
+		}
 	};
 
-	const onFocus = () => {
-		setFocused(true);
+	const handleBlur = (e) => {
+		const currentTarget = e.currentTarget;
+
+		setTimeout(() => {
+			if (!currentTarget.contains(document.activeElement)) {
+				setShowResults(false);
+			}
+		}, 0);
 	};
 
-	const onBlur = () => {
-		setFocused(false);
-		setSearchTerm('');
+	const handleSearch = (e) => {
+		e.preventDefault();
+		if (searchTerm !== '') {
+			debouncedSearch(searchTerm);
+		}
+	};
+
+	const handleSelectCategory = (cname) => {
+		if (cname) {
+			history.push(`/categories/${cname}`);
+			setShowResults(false);
+		}
 	};
 
 	return (
-		<div className='search'>
-			<input
-				type='text'
-				value={searchTerm}
-				onChange={handleChange}
-				placeholder='Search Category'
-				onFocus={onFocus}
-				onBlur={onBlur}
-			/>
+		<div className='search' tabIndex='1' onBlur={handleBlur}>
+			<form className='search-form' onSubmit={handleSearch}>
+				<input
+					type='text'
+					value={searchTerm}
+					onChange={handleChange}
+					placeholder='Search Category'
+				/>
+				<button type='submit'>
+					<SearchOutlined />
+				</button>
+			</form>
 
-			{focused && searchResults.length > 0 && (
+			{showResults && (
 				<div className='search-results'>
-					{searchResults.map((result) =>
+					{searchResults?.map((result) =>
 						result._id !== 0 ? (
-							<Link
-								to={`/categories/:${result.name}`}
+							<p
+								className='search-link'
+								onClick={() =>
+									handleSelectCategory(result.name)
+								}
 								key={result._id}
 							>
 								{result.name}
-							</Link>
+							</p>
 						) : (
 							<p key={result._id}>{result.name}</p>
 						)

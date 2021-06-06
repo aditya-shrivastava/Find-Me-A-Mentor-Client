@@ -1,13 +1,13 @@
-.UpdateProfile{
-    @apply p-2 ;
+.UpdateProfile {
+	@apply p-2;
 }
 
 .ProfilePopUp {
-    @apply font-semibold;
+	@apply font-semibold;
 }
 
-.ProfilePopUp > h1{
-    @apply p-2 flex justify-center;
+.ProfilePopUp > h1 {
+	@apply p-2 flex justify-center;
 }
 
 .edit-profile {
@@ -15,21 +15,33 @@
 }
 
 .input-field {
-    @apply flex flex-col w-96 mb-6
+	@apply flex flex-col w-96 mb-6;
 }
 
 .input-field > input {
 	@apply p-2 rounded-md bg-gray-200;
 }
 
-.uploadbtn > Button{
-    @apply bg-blue-400 text-white;
+.uploadimg {
+	@apply w-96 relative;
+}
+
+.uploadimg > img {
+	@apply w-full max-h-64 object-contain;
+}
+
+.uploadbtn {
+	@apply z-40 absolute top-0 flex w-full h-full justify-center items-center;
+}
+
+.uploadbtn > Button {
+	@apply bg-blue-500 text-white hover:text-blue-500 hover:bg-white;
 }
 
 .updatebtn {
-    @apply p-4 flex justify-center;
+	@apply p-4 flex justify-center;
 }
 
-.updatebtn > Button{
-    @apply p-3 w-48 bg-brgreen text-white;
+.updatebtn > Button {
+	@apply p-3 w-48 bg-brgreen text-white hover:text-brgreen;
 }

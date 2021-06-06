@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './UpdateProfile.css';
-import axios from '../../../api/axios';
+import api from '../../../api';
 
 import { useDispatch } from 'react-redux';
 import { update } from '../../../features/userSlice';
@@ -34,15 +34,11 @@ const UpdateProfile = ({ user, open, setOpen }) => {
 		}
 
 		try {
-			const response = await axios.patch(
-				`/user/${user.uid}`,
-				editedData,
-				{
-					headers: {
-						Authorization: token,
-					},
-				}
-			);
+			const response = await api.patch(`/user/${user.uid}`, editedData, {
+				headers: {
+					Authorization: token,
+				},
+			});
 
 			const updatedUser = response.data.user;
 
@@ -80,19 +76,10 @@ const UpdateProfile = ({ user, open, setOpen }) => {
 							</div>
 							<div className='uploadimg'>
 								Image
-								<Avatar
-									src={image}
-									variant='square'
-									style={{
-										width: 380,
-										height: 300,
-										borderRadius: 5,
-									}}
-								>
-									<div className='uploadbtn'>
-										<Button>Upload Image</Button>
-									</div>
-								</Avatar>
+								<img src={image} alt='user' />
+								<div className='uploadbtn'>
+									<Button>Upload Image</Button>
+								</div>
 							</div>
 							<div className='updatebtn'>
 								<Button type='submit'>Update Profile</Button>

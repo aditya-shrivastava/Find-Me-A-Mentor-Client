@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import axios from '../api/axios';
-import { default as ax } from 'axios';
+import api from '../api';
+import axios from 'axios';
 
 import { useDispatch } from 'react-redux';
 import { login } from '../features/userSlice';
@@ -15,16 +15,16 @@ export const useAuth = () => {
 	const authenticate = useCallback(
 		async (isLogin, data) => {
 			setIsLoading(true);
-			cancelTokenSource.current = ax.CancelToken.source();
+			cancelTokenSource.current = axios.CancelToken.source();
 
 			try {
 				let response;
 				if (isLogin) {
-					response = await axios.post('/auth/login', data, {
+					response = await api.post('/auth/login', data, {
 						cancelToken: cancelTokenSource.current.token,
 					});
 				} else {
-					response = await axios.post('/auth/register', data, {
+					response = await api.post('/auth/register', data, {
 						cancelToken: cancelTokenSource.current.token,
 					});
 				}
