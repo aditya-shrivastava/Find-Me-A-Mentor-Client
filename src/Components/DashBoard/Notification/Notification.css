@@ -1,43 +1,43 @@
 .notification {
-    @apply flex flex-col border w-3/4 p-8 m-8 h-auto border-8 border-brgreen;
+	@apply flex flex-col p-4 w-2/3 border border-brgreen;
 }
 
 .your__meet {
-    @apply flex flex-col mb-4;
+	@apply flex flex-col mb-4;
 }
 
 .your__meet > h1 {
-    @apply text-2xl ;
+	@apply text-2xl;
 }
 
-.subject__form{
-    @apply flex-col flex;
+.subject__form {
+	@apply flex-col flex;
 }
 
 .subject__form > input {
-    @apply my-4 flex border border-8 border-brgreen flex-row w-full h-10 rounded outline-none p-4 ;
+	@apply my-4 flex border border-brgreen flex-row w-full h-10 rounded outline-none p-4;
 }
 
-.date__time{
-    @apply flex space-x-10 flex-row my-4 ;
+.date__time {
+	@apply flex space-x-10 my-4;
 }
 
 .date__time > input {
-    @apply flex flex-row w-full border border-8 border-brgreen h-10 rounded outline-none p-4;
+	@apply flex flex-row w-full border border-brgreen h-10 rounded outline-none p-4;
 }
 
 .add {
-    @apply bg-brgreen w-40 text-white shadow font-medium focus:outline-none hover:bg-white hover:text-brgreen text-center mt-4 shadow py-2;
+	@apply bg-brgreen w-40 text-white font-medium focus:outline-none hover:bg-white hover:text-brgreen text-center mt-4 shadow py-2;
 }
 
 .your__meet > div {
-    @apply flex justify-center items-center;
+	@apply flex justify-center items-center;
 }
 
 .your__notification {
-    @apply flex flex-col;
+	@apply flex flex-col;
 }
 
 .your__notification > h1 {
-    @apply text-2xl ;
+	@apply text-2xl;
 }

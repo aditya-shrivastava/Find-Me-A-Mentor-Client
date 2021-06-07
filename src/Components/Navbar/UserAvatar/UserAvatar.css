@@ -1,0 +1,11 @@
+.avatar-btn {
+	@apply w-5 h-5 text-brgreen bg-white rounded-full flex justify-center items-center;
+}
+
+.MenuItem > .MuiSvgIcon-root {
+	@apply text-brgreen mr-2;
+}
+
+.MenuItem {
+	@apply opacity-60 hover:opacity-100;
+}

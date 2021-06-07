@@ -1,38 +1,38 @@
-import React from 'react'
-import "./Notification.css";
+import React from 'react';
+import './Notification.css';
 import NotificationBlock from './NotificationBlock/NotificationBlock';
 
-
 function Notification() {
-    return (
-       
-            <div className="notification">
-                <div className="your__meet">
+	const createSlot = (e) => {
+		e.preventDefault();
+	};
 
-                    <h1>Organize Your Meet</h1>
+	return (
+		<div className='notification'>
+			<div className='your__meet'>
+				<h1>Organize Your Meet</h1>
 
-                    <form className="subject__form">
-                        <input type="text" placeholder="Subject" name="subject" />
-                        <div className="date__time">
-                            <input type="date" placeholder="date" name="date" />
-                            <input type="time" placeholder="time" name="time" />
-                        </div>
-                    </form>
+				<form className='subject__form' onSubmit={createSlot}>
+					<input type='text' placeholder='Subject' name='subject' />
+					<div className='date__time'>
+						<input type='date' placeholder='date' name='date' />
+						<input type='time' placeholder='time' name='time' />
+					</div>
+					<div>
+						<button type='submit' className='add'>
+							Add
+						</button>
+					</div>
+				</form>
+			</div>
 
-                    <div>
-                        <button type="submit" className="add">Add</button>
-                    </div>
+			<div className='your__notification'>
+				<h1>Your Appointment</h1>
 
-                </div>
-
-                <div className="your__notification">
-                    <h1>Your Appointment</h1>
-
-                    <NotificationBlock subject="Subject" date="Date" time="Time" />
-
-                </div>
-            </div>
-    )
+				<NotificationBlock subject='Subject' date='Date' time='Time' />
+			</div>
+		</div>
+	);
 }
 
-export default Notification
+export default Notification;

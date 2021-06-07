@@ -5,14 +5,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './Pages/Home';
 import OurTeam from './Pages/OurTeam';
-import Profile from './Pages/Profile';
+import Dashboard from './Pages/Dashboard';
 import Error from './Pages/Error';
+import Mentors from './Pages/Mentors';
+import Profile from './Pages/Profile';
 
 import { Footer, Navbar } from './Components';
 
 import { useDispatch } from 'react-redux';
 import { login, logout } from './features/userSlice';
-import Mentors from './Pages/Mentors';
 
 let logoutTimer;
 
@@ -62,7 +63,10 @@ function App() {
 					<Route exact path='/team'>
 						<OurTeam />
 					</Route>
-					<Route path='/profile'>
+					<Route path='/dashboard'>
+						<Dashboard />
+					</Route>
+					<Route path='/profile/:id'>
 						<Profile />
 					</Route>
 					<Route path='/categories/:cname'>

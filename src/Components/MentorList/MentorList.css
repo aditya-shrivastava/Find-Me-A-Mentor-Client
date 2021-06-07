@@ -1,5 +1,5 @@
 .mentor-list {
-	@apply h-screen lg:px-32 md:px-4 py-4 grid  md:grid-cols-2 lg:grid-cols-3 gap-4;
+	@apply h-screen lg:px-32 px-4 py-4 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:grid-cols-1 auto-rows-min overflow-y-auto;
 }
 
 .mentor-card {

@@ -1,15 +1,14 @@
-import React from 'react'
-import DashboardHeader from '../Components/DashBoard/DashboardHeader/DashboardHeader'
-import Notification from '../Components/DashBoard/Notification/Notification'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-function Profile() {
-    return (
-        <div>
-            <DashboardHeader />
-            <Notification />
-        </div>
-    )
-}
+const Profile = () => {
+	const { id } = useParams();
 
-export default Profile
+	return (
+		<div>
+			<h1>Profile {id}</h1>
+		</div>
+	);
+};
 
+export default Profile;
