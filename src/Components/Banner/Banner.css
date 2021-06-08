@@ -1,0 +1,35 @@
+.banner {
+	@apply w-full flex flex-col justify-center items-center;
+}
+
+.banner-img {
+	@apply relative w-full flex justify-center;
+}
+
+.banner-img > img {
+	@apply w-4/5 h-64 object-cover;
+}
+
+.avatar {
+	@apply absolute -bottom-14 w-40 h-40 flex justify-center items-center;
+}
+
+.avatar > img {
+	@apply w-40 h-40 shadow-md object-cover rounded-full border-2 border-white;
+}
+
+.user-info {
+	@apply mt-10 w-4/5 lg:w-96 p-8 flex justify-center items-center flex-col;
+}
+
+.user-info > h3 {
+	@apply font-medium;
+}
+
+.user-info > h2 {
+	@apply text-lg font-medium text-brgreen;
+}
+
+.user-info > p {
+	@apply text-center text-black;
+}

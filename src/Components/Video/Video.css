@@ -1,3 +1,7 @@
 .video-container {
-	@apply h-96 w-full bg-indigo-500 my-10;
+	@apply bg-indigo-400 flex justify-center items-center;
+}
+
+.video-container > video {
+	@apply w-96 h-96 object-cover;
 }

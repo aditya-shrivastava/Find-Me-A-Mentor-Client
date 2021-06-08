@@ -1,11 +1,12 @@
 import React from 'react';
 import './Video.css';
 
+import intro from '../../Assets/intro.mp4';
+
 const Video = () => {
 	return (
 		<div className='video-container'>
-			<h1>Video</h1>
-			{/* <video autoPlay loop muted controls /> */}
+			<video src={intro} autoPlay loop muted controls />
 		</div>
 	);
 };

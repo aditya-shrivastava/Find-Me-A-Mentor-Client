@@ -1,5 +1,5 @@
 .footer {
-	@apply w-full h-auto flex justify-center bg-brgreen items-center;
+	@apply w-full h-auto absolute flex justify-center bg-brgreen items-center;
 }
 
 .circle {

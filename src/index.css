@@ -9,4 +9,6 @@
 /* Global fonts */
 * {
 	@apply font-poppins;
+	margin: 0;
+	padding: 0;
 }

@@ -1,0 +1,15 @@
+.slots {
+	@apply w-full h-auto flex flex-col justify-center items-center;
+}
+
+.slot {
+	@apply bg-white w-4/5 h-20 rounded shadow-lg flex p-3 justify-between items-center hover:shadow-2xl duration-150 cursor-pointer my-3;
+}
+
+.slot > h3 {
+	@apply text-lg font-medium;
+}
+
+.slot-btn {
+	@apply font-medium text-white bg-brgreen rounded py-2 px-4;
+}

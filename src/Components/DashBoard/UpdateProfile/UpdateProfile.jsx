@@ -5,7 +5,6 @@ import api from '../../../api';
 import { useDispatch } from 'react-redux';
 import { update } from '../../../features/userSlice';
 
-import Avatar from '@material-ui/core/Avatar';
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 
 const UpdateProfile = ({ user, open, setOpen }) => {

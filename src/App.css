@@ -1,5 +1,5 @@
 .app {
-	@apply h-screen;
+	@apply relative;
 }
 
 button {
