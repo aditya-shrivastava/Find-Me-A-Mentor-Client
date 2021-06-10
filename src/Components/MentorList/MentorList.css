@@ -3,7 +3,7 @@
 }
 
 .mentor-card {
-	@apply flex items-center justify-center bg-white rounded shadow-md text-black h-44;
+	@apply flex items-center justify-center bg-white rounded shadow-md hover:shadow-xl duration-150 text-black hover:bg-brgreen-100 h-44;
 }
 
 .mentor-image {

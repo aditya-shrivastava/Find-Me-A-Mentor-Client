@@ -1,0 +1,23 @@
+.dropdown {
+	@apply rounded-sm shadow-2xl text-gray-700 w-96 cursor-pointer relative;
+}
+
+.dropdown-content {
+	@apply w-full flex justify-between px-4 py-2 items-center h-14 bg-white;
+}
+
+.dropdown-results {
+	@apply bg-white absolute mt-1 w-full z-50 h-auto max-h-80 overflow-y-auto p-4 flex flex-col shadow-md;
+}
+
+.dropdown-results > p {
+	@apply text-black font-normal text-lg p-3 hover:bg-gray-300;
+}
+
+.dropdown-results::-webkit-scrollbar {
+	@apply w-2 bg-gray-200;
+}
+
+.dropdown-results::-webkit-scrollbar-thumb {
+	@apply bg-gray-400;
+}

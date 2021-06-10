@@ -14,16 +14,12 @@
 	@apply font-light tracking-normal text-lg;
 }
 
-.drop-down {
-	@apply flex items-center mt-6 justify-items-center;
+.header-cta {
+	@apply flex items-center mt-6 z-10;
 }
 
-.drop-down > Button {
-	@apply text-brgreen z-10 items-center focus:outline-none hover:bg-green-600 hover:text-white h-14 ml-6 text-lg bg-white shadow-2xl rounded px-8 py-2;
-}
-
-.select > select {
-	@apply bg-white text-gray-700 text-lg w-96 h-14 shadow-2xl rounded-sm px-10 py-2;
+.header-cta > Button {
+	@apply text-brgreen flex items-center justify-center focus:outline-none hover:bg-green-600 hover:text-white h-14 ml-6 text-lg font-medium bg-white shadow-2xl rounded px-6 py-2;
 }
 
 .img1 {
