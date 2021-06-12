@@ -23,7 +23,7 @@ function Dashboard() {
 				isMentee={isMentee}
 				setIsMentee={setIsMentee}
 			/>
-			<div className='mt-10 flex w-full'>
+			<div className='mt-10 h-screen flex w-full'>
 				{isMentee ? (
 					<Sessions />
 				) : (

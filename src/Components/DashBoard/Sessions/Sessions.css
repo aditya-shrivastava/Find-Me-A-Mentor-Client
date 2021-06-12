@@ -1,5 +1,5 @@
 .sessions {
-	@apply flex flex-col p-8 w-full h-screen border border-brgreen rounded-lg;
+	@apply flex flex-col p-8 w-full h-full border border-brgreen rounded-lg;
 }
 
 .upcoming-sessions {

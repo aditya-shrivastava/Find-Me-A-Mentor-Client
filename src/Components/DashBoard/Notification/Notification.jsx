@@ -13,23 +13,20 @@ function Notification() {
 				<h1>Organize Your Meet</h1>
 
 				<form className='subject__form' onSubmit={createSlot}>
-					<input type='text' placeholder='Subject' name='subject' />
 					<div className='date__time'>
 						<input type='date' placeholder='date' name='date' />
 						<input type='time' placeholder='time' name='time' />
 					</div>
-					<div>
-						<button type='submit' className='add'>
-							Add
-						</button>
-					</div>
+					<button type='submit' className='add'>
+						Add
+					</button>
 				</form>
 			</div>
 
 			<div className='your__notification'>
 				<h1>Your Appointment</h1>
 
-				<NotificationBlock subject='Subject' date='Date' time='Time' />
+				<NotificationBlock date='Date' time='Time' />
 			</div>
 		</div>
 	);
