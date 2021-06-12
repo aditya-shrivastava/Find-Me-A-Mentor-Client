@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import './DashboardHeader.css';
 
-import Avatar from '@material-ui/core/Avatar';
-import { Chat, TurnedIn, Edit } from '@material-ui/icons';
-import Badge from '@material-ui/core/Badge';
-
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../../features/userSlice';
-import { IconButton } from '@material-ui/core';
 import UpdateProfile from '../UpdateProfile/UpdateProfile';
 
-const DashboardHeader = () => {
-	const { user } = useSelector(selectUser);
+import { IconButton, Avatar, Badge } from '@material-ui/core';
+import { Chat, TurnedIn, Edit } from '@material-ui/icons';
+
+const DashboardHeader = ({ user, isMentee, setIsMentee }) => {
 	const [open, setOpen] = useState(false);
+
+	const handleTypeUpgrade = () => {};
 
 	return (
 		<div className='DashboardHeader'>
@@ -23,16 +20,23 @@ const DashboardHeader = () => {
 				/>
 				<div className='user-details'>
 					<h2>{user?.username || 'Jessica James'}</h2>
-					<div className='icon'>
-						<TurnedIn />
-						{user?.category || 'Digital Creator'}
-					</div>
+					{!isMentee && (
+						<div className='icon'>
+							<TurnedIn />
+							{user?.category || 'Digital Creator'}
+						</div>
+					)}
 					<p>
 						{user?.bio ||
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
 					</p>
-					{user?.type === 'mentee' ? (
-						<button className='mentor-btn'>Become Mentor</button>
+					{isMentee ? (
+						<button
+							className='mentor-btn'
+							onClick={handleTypeUpgrade}
+						>
+							Become Mentor
+						</button>
 					) : null}
 				</div>
 			</div>

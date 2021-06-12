@@ -1,30 +1,27 @@
-.sessioncard{
-    @apply  grid grid-cols-2 gap-10 ;
+.session-card {
+	@apply bg-gray-100 flex justify-between items-center p-4 rounded-md hover:shadow-xl cursor-pointer duration-150;
 }
 
-.Live{
-    @apply bg-brgreen py-3 pl-6 pr-3 grid-cols-2 flex justify-between text-white text-lg;
+.card-col-left {
+	@apply flex flex-col;
 }
 
-.subject{
-    @apply py-3 ;
+.card-header {
+	@apply flex text-lg font-medium;
 }
 
-.joinbutton{
-    @apply py-3;
-}
-.joinbtn{
-    @apply bg-white text-brgreen p-2 w-40 rounded-sm focus:outline-none hover:bg-green-600 hover:text-white;
+.card-header h2 {
+	@apply m-4;
 }
 
-.upcoming{
-    @apply bg-gray-200 py-3 pl-6 pr-3 grid-cols-2 flex justify-between text-lg;
+.join-btn {
+	@apply bg-gray-400 w-44 h-10 rounded-md text-gray-300 font-medium;
 }
 
-.m_avatar > button{
-    @apply focus:outline-none pl-20 cursor-pointer;
+.card-col-right {
+	@apply flex flex-col justify-center items-center font-medium;
 }
 
-.mentorName{
-    @apply pt-4 pl-3.5;
+.live {
+	@apply bg-brgreen text-white;
 }

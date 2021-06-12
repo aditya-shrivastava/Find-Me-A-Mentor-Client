@@ -42,6 +42,7 @@ const UpdateProfile = ({ user, open, setOpen }) => {
 			const updatedUser = response.data.user;
 
 			dispatch(update(updatedUser));
+			handleClose();
 		} catch (error) {
 			console.error(error);
 		}
@@ -75,7 +76,7 @@ const UpdateProfile = ({ user, open, setOpen }) => {
 							</div>
 							<div className='uploadimg'>
 								Image
-								<img src={image} alt='user' />
+								{user?.image && <img src={image} alt='user' />}
 								<div className='uploadbtn'>
 									<Button>Upload Image</Button>
 								</div>

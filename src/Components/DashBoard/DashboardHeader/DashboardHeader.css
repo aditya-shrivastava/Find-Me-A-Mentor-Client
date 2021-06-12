@@ -29,3 +29,7 @@
 .lowercard {
 	@apply flex;
 }
+
+.mentor-btn {
+	@apply bg-blue-400 w-48 h-12 text-white font-medium;
+}

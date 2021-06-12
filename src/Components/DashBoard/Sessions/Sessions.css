@@ -1,15 +1,27 @@
-.Sessions{
-    @apply flex flex-col border p-8 m-8 h-auto border-8 border-brgreen rounded-xl;
+.sessions {
+	@apply flex flex-col p-8 w-full h-screen border border-brgreen rounded-lg;
 }
 
-.upcoming_sessions{
-    @apply flex justify-between pb-5;
+.upcoming-sessions {
+	@apply flex justify-between mb-5;
 }
 
-.upcoming_sessions > h1{
-    @apply text-2xl font-medium ;
+.upcoming-sessions h1 {
+	@apply text-xl font-medium;
 }
 
-.upcoming_sessions > button{
-    @apply focus:outline-none cursor-pointer;
+.upcoming_sessions > button {
+	@apply focus:outline-none cursor-pointer;
+}
+
+.session-cards {
+	@apply grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 p-4 gap-6 h-auto max-h-full overflow-y-auto;
+}
+
+.session-cards::-webkit-scrollbar {
+	@apply w-2 bg-gray-200;
+}
+
+.session-cards::-webkit-scrollbar-thumb {
+	@apply bg-gray-400;
 }

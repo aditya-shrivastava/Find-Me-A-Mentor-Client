@@ -23,7 +23,7 @@
 }
 
 .uploadimg {
-	@apply w-96 relative;
+	@apply w-96 h-64 relative;
 }
 
 .uploadimg > img {
