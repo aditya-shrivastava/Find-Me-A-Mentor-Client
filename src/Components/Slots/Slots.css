@@ -1,5 +1,13 @@
 .slots {
-	@apply w-full h-auto flex flex-col justify-center items-center;
+	@apply w-full h-screen py-4 overflow-y-auto flex flex-col justify-start items-center;
+}
+
+.slots::-webkit-scrollbar {
+	@apply w-2 bg-gray-300;
+}
+
+.slots::-webkit-scrollbar-thumb {
+	@apply bg-gray-400;
 }
 
 .slot {
@@ -7,7 +15,7 @@
 }
 
 .slot > h3 {
-	@apply text-lg font-medium;
+	@apply text-lg;
 }
 
 .slot-btn {

@@ -103,6 +103,7 @@ function Notification() {
 
 			<div className='your__notification'>
 				<h1>Your Appointment</h1>
+
 				{slots?.map((slot) => (
 					<NotificationBlock
 						key={slot._id}

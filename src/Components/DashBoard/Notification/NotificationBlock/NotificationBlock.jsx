@@ -7,7 +7,7 @@ import { Delete } from '@material-ui/icons';
 function NotificationBlock({ slot, removeSlot }) {
 	return (
 		<div className={`notif__block ${slot.isBooked && 'booked'}`}>
-			<p>{new Date(slot.date).toDateString()}</p>
+			<p>{new Date(slot.date).toLocaleString()}</p>
 			<button className='join-btn'>Join Now</button>
 			<IconButton
 				className='delete-btn'

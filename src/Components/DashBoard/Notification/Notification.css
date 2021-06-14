@@ -35,7 +35,15 @@
 }
 
 .your__notification {
-	@apply flex flex-col;
+	@apply flex flex-col h-screen p-2 overflow-y-auto;
+}
+
+.your__notification::-webkit-scrollbar {
+	@apply w-2 bg-gray-300;
+}
+
+.your__notification::-webkit-scrollbar-thumb {
+	@apply bg-gray-400;
 }
 
 .your__notification > h1 {

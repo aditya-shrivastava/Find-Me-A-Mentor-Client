@@ -1,7 +1,7 @@
 import React from 'react';
 import './Banner.css';
 
-const Banner = () => {
+const Banner = ({ userData }) => {
 	return (
 		<div className='banner'>
 			<div className='banner-img'>
@@ -11,21 +11,14 @@ const Banner = () => {
 				/>
 
 				<div className='avatar'>
-					<img
-						src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'
-						alt='user'
-					/>
+					<img src={userData?.image} alt='user' />
 				</div>
 			</div>
 
 			<div className='user-info'>
-				<h3>Aditya Shrivastava</h3>
-				<h2>Mentor : Category</h2>
-				<p>
-					bio: Lorem, ipsum dolor sit amet consectetur adipisicing
-					elit. Architecto distinctio alias consequuntur pariatur
-					minima omnis deserunt voluptatum velit assumenda quia.
-				</p>
+				<h3>{userData?.username}</h3>
+				<h2>Mentor : {userData?.category}</h2>
+				<p>bio: {userData?.bio}</p>
 			</div>
 		</div>
 	);
