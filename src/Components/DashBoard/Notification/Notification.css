@@ -3,11 +3,11 @@
 }
 
 .your__meet {
-	@apply flex flex-col mb-4;
+	@apply flex flex-col mb-8;
 }
 
 .your__meet > h1 {
-	@apply text-2xl;
+	@apply text-xl mb-4;
 }
 
 .subject__form {
@@ -19,15 +19,15 @@
 }
 
 .date__time {
-	@apply flex space-x-10 my-4;
+	@apply flex justify-between w-full lg:w-2/3 my-4;
 }
 
 .date__time > input {
-	@apply flex flex-row w-full border border-brgreen h-10 rounded outline-none p-4;
+	@apply flex w-64 lg:w-80 border border-brgreen h-10 rounded outline-none p-4;
 }
 
 .add {
-	@apply bg-brgreen w-40 text-white font-medium focus:outline-none hover:bg-white hover:text-brgreen text-center mt-4 shadow py-2;
+	@apply bg-brgreen w-40 text-white font-medium focus:outline-none hover:bg-white hover:text-brgreen text-center mt-2 shadow py-2;
 }
 
 .your__meet > div {
@@ -39,5 +39,5 @@
 }
 
 .your__notification > h1 {
-	@apply text-2xl;
+	@apply text-xl;
 }

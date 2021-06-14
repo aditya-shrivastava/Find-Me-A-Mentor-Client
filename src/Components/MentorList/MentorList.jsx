@@ -10,13 +10,7 @@ const MentorList = ({ mentors }) => {
 			{mentors.map((mentor) => (
 				<div className='mentor-card' key={mentor.id}>
 					<div className='mentor-image'>
-						<img
-							src={
-								mentor.image &&
-								`http://localhost:5000/${mentor.image}`
-							}
-							alt='mentor'
-						/>
+						<img src={mentor.image} alt='mentor' />
 					</div>
 					<div className='mentor-content'>
 						<h3>{mentor.username}</h3>

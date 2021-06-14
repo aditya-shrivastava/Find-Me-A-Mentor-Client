@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	user: null,
+	token: null,
 };
 
 const userSlice = createSlice({
@@ -18,6 +19,7 @@ const userSlice = createSlice({
 				).toISOString();
 
 			state.user = user;
+			state.token = token;
 
 			localStorage.setItem(
 				'userData',
@@ -30,6 +32,7 @@ const userSlice = createSlice({
 		},
 		logout: (state) => {
 			state.user = null;
+			state.token = null;
 			localStorage.removeItem('userData');
 		},
 		update: (state, action) => {

@@ -69,7 +69,7 @@ const UserAvatar = ({ user }) => {
 					</MenuItem>
 				</Menu>
 				<Avatar
-					src={user.image && `http://localhost:5000/${user.image}`}
+					src={user?.image}
 					style={{ borderColor: 'white', borderWidth: 2 }}
 				/>
 			</Badge>

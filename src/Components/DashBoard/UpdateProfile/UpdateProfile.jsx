@@ -2,20 +2,18 @@ import React, { useState } from 'react';
 import './UpdateProfile.css';
 import api from '../../../api';
 
-import { useDispatch } from 'react-redux';
-import { update } from '../../../features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser, update } from '../../../features/userSlice';
 
 import { Button, Dialog, DialogContent } from '@material-ui/core';
 
 const UpdateProfile = ({ user, open, setOpen }) => {
 	const dispatch = useDispatch();
-	const { token } = JSON.parse(localStorage.getItem('userData'));
+	const { token } = useSelector(selectUser);
 
 	const [name, setName] = useState(user?.username);
 	const [bio, setBio] = useState(user?.bio);
-	const [image, setImage] = useState(
-		user && `http://localhost:5000/${user.image}`
-	);
+	const [image, setImage] = useState(user?.image);
 
 	const handleClose = () => {
 		setOpen(false);

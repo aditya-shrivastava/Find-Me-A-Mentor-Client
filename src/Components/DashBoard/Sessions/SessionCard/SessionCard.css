@@ -15,7 +15,7 @@
 }
 
 .join-btn {
-	@apply bg-gray-400 w-44 h-10 rounded-md text-gray-300 font-medium;
+	@apply bg-gray-200 w-44 h-10 rounded-md text-gray-600 font-medium;
 }
 
 .card-col-right {

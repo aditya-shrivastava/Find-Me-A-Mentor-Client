@@ -1,21 +1,99 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Notification.css';
+
+import api from '../../../api';
+
+import { useDispatch, useSelector } from 'react-redux';
+import {
+	addSlot,
+	deleteSlot,
+	initializeSlots,
+	selectSlots,
+} from '../../../features/slotSlice';
+import { selectUser } from '../../../features/userSlice';
+
 import NotificationBlock from './NotificationBlock/NotificationBlock';
 
 function Notification() {
-	const createSlot = (e) => {
+	const { user, token } = useSelector(selectUser);
+	const { slots } = useSelector(selectSlots);
+	const dispatch = useDispatch();
+	const [date, setDate] = useState('');
+	const [time, setTime] = useState('');
+
+	const createSlot = async (e) => {
 		e.preventDefault();
+		if (!date || !time) return;
+
+		const newSlot = new Date(`${date} ${time}`);
+		try {
+			const response = await api.post(
+				'/slot/add',
+				{ date: newSlot },
+				{
+					headers: {
+						Authorization: token,
+					},
+				}
+			);
+
+			const { slot } = response.data;
+			dispatch(addSlot(slot));
+			setDate('');
+			setTime('');
+		} catch (error) {
+			console.error(error);
+		}
 	};
+
+	const removeSlot = async (id) => {
+		try {
+			await api.delete(`/slot/${id}`, {
+				headers: {
+					Authorization: token,
+				},
+			});
+
+			dispatch(deleteSlot(id));
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+	useEffect(() => {
+		if (user) {
+			const fetchSlots = async () => {
+				try {
+					const response = await api.get(`/slot/user/${user?.uid}`);
+
+					dispatch(initializeSlots(response.data.slots));
+				} catch (error) {
+					console.error(error);
+				}
+			};
+			fetchSlots();
+		}
+	}, [user, dispatch]);
 
 	return (
 		<div className='notification'>
 			<div className='your__meet'>
-				<h1>Organize Your Meet</h1>
+				<h1>Organize Your Meetings</h1>
 
 				<form className='subject__form' onSubmit={createSlot}>
 					<div className='date__time'>
-						<input type='date' placeholder='date' name='date' />
-						<input type='time' placeholder='time' name='time' />
+						<input
+							value={date}
+							onChange={(e) => setDate(e.target.value)}
+							type='date'
+							placeholder='date'
+						/>
+						<input
+							type='time'
+							value={time}
+							onChange={(e) => setTime(e.target.value)}
+							placeholder='time'
+						/>
 					</div>
 					<button type='submit' className='add'>
 						Add
@@ -25,8 +103,13 @@ function Notification() {
 
 			<div className='your__notification'>
 				<h1>Your Appointment</h1>
-
-				<NotificationBlock date='Date' time='Time' />
+				{slots?.map((slot) => (
+					<NotificationBlock
+						key={slot._id}
+						slot={slot}
+						removeSlot={removeSlot}
+					/>
+				))}
 			</div>
 		</div>
 	);
