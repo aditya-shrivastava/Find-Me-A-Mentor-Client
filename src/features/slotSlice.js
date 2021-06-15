@@ -22,10 +22,13 @@ const slotSlice = createSlice({
 		bookSlot: (state, action) => {
 			state.slots = [...state.slots, action.payload];
 		},
+		clearSlots: (state) => {
+			state.slots = [];
+		},
 	},
 });
 
-export const { initializeSlots, addSlot, deleteSlot, bookSlot } =
+export const { initializeSlots, addSlot, deleteSlot, bookSlot, clearSlots } =
 	slotSlice.actions;
 
 export const selectSlots = (state) => state.slots;

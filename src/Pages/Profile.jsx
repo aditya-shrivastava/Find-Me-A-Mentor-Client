@@ -33,7 +33,7 @@ const Profile = () => {
 	return (
 		<div className='p-4 h-full lg:px-32 bg-gray-150'>
 			<Banner userData={userData} />
-			<Slots slotsData={slotsData} />
+			<Slots slotsData={slotsData} setSlotsData={setSlotsData} />
 		</div>
 	);
 };

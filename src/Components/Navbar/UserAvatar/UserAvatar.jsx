@@ -12,6 +12,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../../features/userSlice';
+import { clearSlots } from '../../../features/slotSlice';
 
 const UserAvatar = ({ user }) => {
 	const [open, setOpen] = useState(false);
@@ -30,6 +31,7 @@ const UserAvatar = ({ user }) => {
 	const handleLogout = () => {
 		localStorage.removeItem('user');
 		dispatch(logout());
+		dispatch(clearSlots());
 	};
 
 	return (

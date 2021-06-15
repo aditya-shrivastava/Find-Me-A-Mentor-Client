@@ -1,9 +1,14 @@
 import React from 'react';
 import './Sessions.css';
+
+import { useSelector } from 'react-redux';
+import { selectSlots } from '../../../features/slotSlice';
+
 import SessionCard from './SessionCard/SessionCard';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 const Sessions = () => {
+	const { slots } = useSelector(selectSlots);
 	return (
 		<div className='sessions'>
 			<div className='upcoming-sessions'>
@@ -13,7 +18,9 @@ const Sessions = () => {
 				</button>
 			</div>
 			<div className='session-cards'>
-				<SessionCard />
+				{slots?.map((slot) => (
+					<SessionCard key={slot._id} slot={slot} />
+				))}
 			</div>
 		</div>
 	);

@@ -3,21 +3,23 @@ import { Avatar } from '@material-ui/core';
 
 import './SessionCard.css';
 
-const SessionCard = () => {
+const SessionCard = ({ slot }) => {
 	return (
 		<div className='session-card'>
 			<div className='card-col-left'>
 				<div className='card-header'>
-					<h2>Date</h2>
-					<h2>Time</h2>
+					<h2>{new Date(slot.date).toLocaleString()}</h2>
 				</div>
 				<button className='join-btn' disabled>
 					Join Now
 				</button>
 			</div>
 			<div className='card-col-right'>
-				<Avatar style={{ width: 80, height: 80 }} />
-				<h2>Mentor Name</h2>
+				<Avatar
+					src={slot.creator_details.image}
+					style={{ width: 80, height: 80 }}
+				/>
+				<h2>{slot.creator_details.name}</h2>
 			</div>
 		</div>
 	);

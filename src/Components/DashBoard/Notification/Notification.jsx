@@ -4,13 +4,8 @@ import './Notification.css';
 import api from '../../../api';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	addSlot,
-	deleteSlot,
-	initializeSlots,
-	selectSlots,
-} from '../../../features/slotSlice';
-import { selectUser } from '../../../features/userSlice';
+import { addSlot, deleteSlot, selectSlots } from '../../../features/slotSlice';
+import { selectUser, update } from '../../../features/userSlice';
 
 import NotificationBlock from './NotificationBlock/NotificationBlock';
 
@@ -38,7 +33,10 @@ function Notification() {
 			);
 
 			const { slot } = response.data;
+			const schedule = [...user.schedule, slot._id];
 			dispatch(addSlot(slot));
+			dispatch(update({ ...user, schedule }));
+
 			setDate('');
 			setTime('');
 		} catch (error) {
@@ -54,26 +52,14 @@ function Notification() {
 				},
 			});
 
+			const schedule = user.schedule.filter((slotId) => slotId !== id);
+
 			dispatch(deleteSlot(id));
+			dispatch(update({ ...user, schedule }));
 		} catch (error) {
 			console.error(error);
 		}
 	};
-
-	useEffect(() => {
-		if (user) {
-			const fetchSlots = async () => {
-				try {
-					const response = await api.get(`/slot/user/${user?.uid}`);
-
-					dispatch(initializeSlots(response.data.slots));
-				} catch (error) {
-					console.error(error);
-				}
-			};
-			fetchSlots();
-		}
-	}, [user, dispatch]);
 
 	return (
 		<div className='notification'>
