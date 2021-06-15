@@ -20,7 +20,7 @@ function Dashboard() {
 	}, [user?.type]);
 
 	useEffect(() => {
-		if (user) {
+		if (user?.uid) {
 			const fetchSlots = async () => {
 				try {
 					const response = await api.get(
@@ -34,7 +34,7 @@ function Dashboard() {
 			};
 			fetchSlots();
 		}
-	}, [user?.uid, dispatch]);
+	}, [user?.uid, user?.type, dispatch]);
 
 	return (
 		<div className='p-4 lg:px-32 flex justify-evenly flex-col'>
