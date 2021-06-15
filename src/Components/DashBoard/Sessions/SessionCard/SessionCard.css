@@ -7,7 +7,7 @@
 }
 
 .card-header {
-	@apply flex text-lg font-medium;
+	@apply flex text-lg;
 }
 
 .card-header h2 {
@@ -19,7 +19,7 @@
 }
 
 .card-col-right {
-	@apply flex flex-col justify-center items-center font-medium;
+	@apply flex flex-col justify-center items-center text-center font-medium;
 }
 
 .live {

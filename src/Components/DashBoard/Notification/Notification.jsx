@@ -15,6 +15,7 @@ function Notification() {
 	const dispatch = useDispatch();
 	const [date, setDate] = useState('');
 	const [time, setTime] = useState('');
+	const today = new Date();
 
 	const createSlot = async (e) => {
 		e.preventDefault();
@@ -92,6 +93,7 @@ function Notification() {
 
 				{slots?.map((slot) => (
 					<NotificationBlock
+						today={today}
 						key={slot._id}
 						slot={slot}
 						removeSlot={removeSlot}

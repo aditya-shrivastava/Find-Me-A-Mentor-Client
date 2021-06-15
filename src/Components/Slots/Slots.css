@@ -19,5 +19,17 @@
 }
 
 .slot-btn {
-	@apply font-medium text-white bg-brgreen rounded py-2 px-4;
+	@apply font-medium text-white rounded py-2 px-4;
+}
+
+.enabled {
+	@apply bg-brgreen;
+}
+
+.success {
+	@apply bg-brgreen;
+}
+
+.disabled {
+	@apply bg-gray-400;
 }

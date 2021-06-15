@@ -1,15 +1,47 @@
 .notif__block {
-	@apply flex flex-row bg-red-300 w-full h-14 my-4 rounded py-4 items-center px-4 justify-between hover:shadow-xl duration-150;
+	@apply flex flex-col bg-gray-100 w-full h-auto my-4 rounded items-center px-4 hover:shadow-xl duration-150;
 }
 
-.notif__block > p {
-	@apply text-black text-lg;
+.date {
+	@apply text-black;
 }
 
 .delete-btn .MuiSvgIcon-root {
-	@apply text-white;
+	@apply text-red-500;
 }
 
 .booked {
-	@apply bg-indigo-400;
+	@apply text-brgreen flex items-center;
+}
+
+.booked .MuiSvgIcon-root {
+	@apply text-brgreen;
+}
+
+.available {
+	@apply text-red-500 text-lg font-medium;
+}
+
+.booker-details {
+	@apply duration-150 ease-in-out flex items-center py-2;
+}
+
+.booker-details h3 {
+	@apply text-lg text-black px-2;
+}
+
+.booker-details img {
+	@apply w-14;
+}
+
+.snackbar {
+	@apply text-white p-4 rounded flex items-center;
+}
+
+.error {
+	@apply bg-red-500;
+}
+
+.snackbar .MuiSvgIcon-root {
+	@apply text-white;
 }

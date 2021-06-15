@@ -15,14 +15,10 @@ const Profile = () => {
 		const fetchUserData = async () => {
 			try {
 				const userResponse = await api.get(`/user/${id}`);
-				const slotsResponse = await api.get(`/slot/user/${id}`);
-
-				const slots = slotsResponse.data.slots.filter(
-					(slot) => slot.isBooked !== true
-				);
+				const slotsResponse = await api.get(`/slot/mentor/${id}`);
 
 				setUserData(userResponse.data.user);
-				setSlotsData(slots);
+				setSlotsData(slotsResponse.data.slots);
 			} catch (error) {
 				console.error(error);
 			}
