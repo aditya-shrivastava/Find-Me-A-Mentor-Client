@@ -2,6 +2,10 @@
 	@apply bg-brgreen py-4 lg:px-32 md:px-4 flex justify-between items-center;
 }
 
+.team__navbar {
+	@apply bg-black py-4 lg:px-32 md:px-4 flex justify-between items-center;
+}
+
 .left {
 	@apply text-white p-1;
 }

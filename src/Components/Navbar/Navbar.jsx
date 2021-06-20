@@ -15,9 +15,12 @@ const Navbar = () => {
 	const [openPopup, setOpenPopup] = useState(false);
 	const { user } = useSelector(selectUser);
 
+	const pathName = window.location.href.split('/').splice(-1);
+	console.log(pathName);
+
 	return (
 		<>
-			<div className='navbar'>
+			<div className={ (pathName[0] === "team")? "team__navbar" : 'navbar'}>
 				<div className='left'>
 					<NavLink className='link' to='/'>
 						Find Me A Mentor
