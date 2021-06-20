@@ -10,6 +10,14 @@
 	@apply flex-grow w-full outline-none py-1 px-2 focus:text-black;
 }
 
+.team__search-form {
+	@apply flex justify-center items-center bg-gray-600 opacity-70;
+}
+
+.team__search-form > input {
+	@apply flex-grow bg-transparent w-full outline-none py-1 px-2 focus:text-white;
+}
+
 .search-results {
 	@apply flex flex-col absolute z-50 bg-white w-full px-2 shadow-md py-4 border-t border-gray-200 justify-evenly max-h-80 overflow-y-scroll;
 }

@@ -13,6 +13,9 @@ const Search = () => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchResults, setSearchResults] = useState([]);
 
+	const pathName = window.location.href.split('/').splice(-1);
+	console.log(pathName);
+
 	const history = useHistory();
 
 	const search = async (term) => {
@@ -69,7 +72,7 @@ const Search = () => {
 
 	return (
 		<div className='search' tabIndex='1' onBlur={handleBlur}>
-			<form className='search-form' onSubmit={handleSearch}>
+			<form className={(pathName[0] === "team") ? "team__search-form" : 'search-form'} onSubmit={handleSearch}>
 				<input
 					type='text'
 					value={searchTerm}
