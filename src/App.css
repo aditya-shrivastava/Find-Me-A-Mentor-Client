@@ -1,5 +1,5 @@
 .app {
-	@apply relative;
+	@apply relative max-w-full;
 }
 
 button {

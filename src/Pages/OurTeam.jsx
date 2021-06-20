@@ -1,10 +1,12 @@
 import React from 'react'
 
+import OurteamData from '../Components/OurteamData/OurteamData'
+
 function OurTeam() {
     return (
-        <div>
-            <h1>details of team mates </h1>
-        </div>
+        <main>
+            <OurteamData />
+        </main>
     )
 }
 
