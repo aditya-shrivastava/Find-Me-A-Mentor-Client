@@ -1,7 +1,26 @@
 .video-container {
-	@apply bg-indigo-400 flex justify-center items-center;
+    @apply bg-indigo-400 flex justify-center items-center;
 }
 
 .video-container > video {
-	@apply w-96 h-96 object-cover;
+    @apply w-96 h-96 object-cover;
+}
+
+.video-live{
+	@apply flex-none ;
+}
+.userpic{
+	@apply p-5 flex justify-center;
+}
+
+.mentorpic{
+	@apply p-5;
+}
+
+.menteepic{
+	@apply p-5;
+}
+
+.buttons>button{
+	@apply p-3 bg-gray-200;
 }
