@@ -7,31 +7,40 @@ import VideocamOffIcon from '@material-ui/icons/VideocamOff';
 import MicOffIcon from '@material-ui/icons/MicOff';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
-import Chat from '../Chat/Chat';
-
-import intro from '../../Assets/intro.mp4';
 
 const Video = () => {
 	return (
 		<div className='video-container'>
-			<video src={intro} autoPlay loop muted controls />
 			<div className='video-live'>
-				<div className='userpic'>
+				<div className='user'>
 					<div className='mentorpic'>
-						<Avatar variant='square' style={{ width: 200, height: 200 }} />
+						<Avatar
+							variant='square'
+							style={{ width: 200, height: 200 }}
+						/>
 					</div>
 					<div className='menteepic'>
-						<Avatar variant='square' style={{ width: 200, height: 200 }} />
+						<Avatar
+							variant='square'
+							style={{ width: 200, height: 200 }}
+						/>
 					</div>
 				</div>
-				<div className='buttons'>
-					<IconButton><VideocamOffIcon style={{ color: 'black' }} /></IconButton>
-					<IconButton><MicOffIcon style={{ color: 'black' }} /></IconButton>
-					<IconButton><CallEndIcon style={{ color: 'red' }} /></IconButton>
-					<IconButton><ChatBubbleIcon style={{ color: 'black' }} /></IconButton>
-				</div>
 			</div>
-			<Chat />
+			<div className='buttons'>
+				<IconButton>
+					<VideocamOffIcon style={{ color: 'black' }} />
+				</IconButton>
+				<IconButton>
+					<MicOffIcon style={{ color: 'black' }} />
+				</IconButton>
+				<IconButton>
+					<CallEndIcon style={{ color: 'red' }} />
+				</IconButton>
+				<IconButton>
+					<ChatBubbleIcon style={{ color: 'black' }} />
+				</IconButton>
+			</div>
 		</div>
 	);
 };

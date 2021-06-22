@@ -19,37 +19,35 @@ const Navbar = () => {
 	console.log(pathName);
 
 	return (
-		<>
-			<div className={ (pathName[0] === "team")? "team__navbar" : 'navbar'}>
-				<div className='left'>
-					<NavLink className='link' to='/'>
-						Find Me A Mentor
-					</NavLink>
-				</div>
-
-				<Search />
-
-				<div className='right'>
-					<NavLink className='link' to='/'>
-						Home
-					</NavLink>
-					<NavLink className='link' to='/team'>
-						Our Team
-					</NavLink>
-					{user ? (
-						<UserAvatar user={user} />
-					) : (
-						<Button
-							className='login-btn'
-							onClick={() => setOpenPopup(true)}
-						>
-							Login
-						</Button>
-					)}
-					<Popup openPopup={openPopup} setOpenPopup={setOpenPopup} />
-				</div>
+		<div className={pathName[0] === 'team' ? 'team__navbar' : 'navbar'}>
+			<div className='left'>
+				<NavLink className='link' to='/'>
+					Find Me A Mentor
+				</NavLink>
 			</div>
-		</>
+
+			<Search />
+
+			<div className='right'>
+				<NavLink className='link' to='/'>
+					Home
+				</NavLink>
+				<NavLink className='link' to='/team'>
+					Our Team
+				</NavLink>
+				{user ? (
+					<UserAvatar user={user} />
+				) : (
+					<Button
+						className='login-btn'
+						onClick={() => setOpenPopup(true)}
+					>
+						Login
+					</Button>
+				)}
+				<Popup openPopup={openPopup} setOpenPopup={setOpenPopup} />
+			</div>
+		</div>
 	);
 };
 export default Navbar;

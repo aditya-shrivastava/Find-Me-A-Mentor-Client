@@ -9,6 +9,7 @@ import Dashboard from './Pages/Dashboard';
 import Error from './Pages/Error';
 import Mentors from './Pages/Mentors';
 import Profile from './Pages/Profile';
+import Meeting from './Pages/Meeting';
 
 import { Footer, Navbar } from './Components';
 
@@ -72,11 +73,14 @@ function App() {
 					<Route path='/categories/:cname'>
 						<Mentors />
 					</Route>
+					<Route path='/meeting/:id'>
+						<Meeting />
+					</Route>
 					<Route path='*'>
 						<Error />
 					</Route>
 				</Switch>
-				<Footer />
+				{/* <Footer /> */}
 			</Router>
 		</div>
 	);

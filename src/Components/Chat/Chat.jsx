@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Chat.css';
+
 import SendIcon from '@material-ui/icons/Send';
-import {TextField} from '@material-ui/core';
 
 const Chat = () => {
-    return (
-        <div className='chat'> 
-            <TextField type='text' placeholder='Type to chat...' />
-            <button><SendIcon style={{color:'#34D684'}}/></button>
-        </div>
-    )
-}
-export default Chat
+	const sendMessage = (e) => {
+		e.preventDefault();
+	};
+
+	const [message, setMessage] = useState('');
+	return (
+		<div className='chat'>
+			<div className='chat-container'>
+				<form onSubmit={sendMessage}>
+					<input
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
+						type='text'
+						placeholder='Type to chat...'
+					/>
+					<button type='submit'>
+						<SendIcon />
+					</button>
+				</form>
+			</div>
+		</div>
+	);
+};
+export default Chat;

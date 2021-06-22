@@ -1,3 +1,19 @@
-.chat{
-    @apply bg-gray-200;
+.chat {
+	@apply w-80 h-full pb-32;
+}
+
+.chat-container {
+	@apply bg-gray-200 h-full relative w-full;
+}
+
+.chat form {
+	@apply absolute bottom-12 w-full bg-white shadow-2xl rounded flex justify-evenly;
+}
+
+.chat form input {
+	@apply px-2 py-4 text-black w-full bg-transparent outline-none;
+}
+
+.chat form button {
+	@apply text-brgreen-400;
 }
