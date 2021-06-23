@@ -3,15 +3,44 @@ import './Chat.css';
 
 import SendIcon from '@material-ui/icons/Send';
 
-const Chat = () => {
+const Message = ({body, sender}) => {
+	return (
+		<p className='text-black'>{body} : {sender}</p>
+	);
+}
+
+
+const Chat = ({ socket }) => {
+	const [message, setMessage] = useState('');
+	const [messages, setMessages] = useState([]);
+
 	const sendMessage = (e) => {
 		e.preventDefault();
+
+		const newMessage = {
+			senderId: 10,
+			senderName: 'Aditya',
+			body: message
+		}
+
+		socket.emit('send-message', newMessage);
+
+		setMessages([...messages, newMessage]);
+		setMessage('');
 	};
 
-	const [message, setMessage] = useState('');
+	
+	socket?.on('receive-message', newMessage => {
+		setMessages([...messages, newMessage]);
+	});
+	
+
 	return (
 		<div className='chat'>
 			<div className='chat-container'>
+				{messages?.map((message, index) => (
+					<Message body={message.body} sender={message.senderName} key={index} />
+				))}
 				<form onSubmit={sendMessage}>
 					<input
 						value={message}

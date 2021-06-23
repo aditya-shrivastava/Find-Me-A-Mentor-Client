@@ -1,19 +1,19 @@
 .chat {
-	@apply w-80 h-full pb-32;
+	@apply w-96 h-full rounded p-2;
 }
 
 .chat-container {
-	@apply bg-gray-200 h-full relative w-full;
+	@apply bg-gray-100 h-full relative w-full overflow-y-auto; 
 }
 
 .chat form {
-	@apply absolute bottom-12 w-full bg-white shadow-2xl rounded flex justify-evenly;
+	@apply absolute bottom-12 w-full bg-white shadow-2xl rounded flex justify-center;
 }
 
 .chat form input {
-	@apply px-2 py-4 text-black w-full bg-transparent outline-none;
+	@apply px-2 py-4 text-black w-4/5 bg-transparent outline-none;
 }
 
 .chat form button {
-	@apply text-brgreen-400;
+	@apply text-brgreen-400 p-0 w-1/5;
 }

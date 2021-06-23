@@ -1,5 +1,5 @@
 .app {
-	@apply relative max-w-full;
+	@apply relative max-w-full h-screen overflow-y-auto;
 }
 
 button {
