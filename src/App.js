@@ -20,7 +20,7 @@ import { login, logout } from './features/userSlice';
 
 let logoutTimer;
 const myPeer = new Peer();
-const socket = io(`http://localhost:5001/`);
+const socket = io('https://fmm-socket-server.herokuapp.com');
 
 function App() {
 	const [me, setMe] = useState('');
@@ -28,11 +28,12 @@ function App() {
 	const [tokenExpiration, setTokenExpiration] = useState();
 	const dispatch = useDispatch();
 
-	useEffect(() => {
-		myPeer.on('open', (id) => {
-			setMe(id);
-		});
-	}, []);
+	
+	myPeer.on('open', (id) => {
+		setMe(id);
+		localStorage.setItem('myPeerId', id);
+	});
+	
 
 	useEffect(() => {
 		const userData = JSON.parse(localStorage.getItem('userData'));

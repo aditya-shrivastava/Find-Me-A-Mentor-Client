@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './Video.css';
-import { Avatar, IconButton } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 //import VideocamIcon from '@material-ui/icons/Videocam';
 import VideocamOffIcon from '@material-ui/icons/VideocamOff';
 //import MicIcon from '@material-ui/icons/Mic';
@@ -8,7 +8,7 @@ import MicOffIcon from '@material-ui/icons/MicOff';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 
-const Video = ({ userVideo, peerVideo }) => {
+const Video = ({ leaveCall, userVideo, peerVideo }) => {
 	return (
 		<div className='video-container'>
 			<div className='video-live'>
@@ -23,7 +23,7 @@ const Video = ({ userVideo, peerVideo }) => {
 					<MicOffIcon style={{ color: 'black' }} />
 				</IconButton>
 				<IconButton>
-					<CallEndIcon style={{ color: 'red' }} />
+					<CallEndIcon style={{ color: 'red' }} onClick={leaveCall} />
 				</IconButton>
 				<IconButton>
 					<ChatBubbleIcon style={{ color: 'black' }} />

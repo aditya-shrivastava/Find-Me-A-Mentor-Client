@@ -2,6 +2,10 @@
 	@apply bg-white shadow-lg min-w-max h-44 m-4 rounded-l-lg flex;
 }
 
+.testimonial-card-img {
+	@apply object-cover h-auto w-44 rounded-l-lg;
+}
+
 .review {
 	@apply flex flex-col pl-4 pr-1 py-4;
 }

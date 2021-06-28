@@ -2,6 +2,10 @@
 	@apply flex flex-col bg-gray-100 w-full h-auto my-4 rounded items-center px-4 hover:shadow-xl duration-150;
 }
 
+.notif__block_details {
+	@apply flex w-full items-center h-16 justify-between;
+}
+
 .date {
 	@apply text-black;
 }

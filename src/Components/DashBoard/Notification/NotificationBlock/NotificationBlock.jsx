@@ -39,7 +39,7 @@ function NotificationBlock({ slot, removeSlot }) {
 					</IconButton>
 				</div>
 			</Snackbar>
-			<div className='flex w-full items-center h-16 justify-between'>
+			<div className='notif__block_details'>
 				<p className='date'>{new Date(slot.date).toLocaleString()}</p>
 				<button
 					className={`join-btn ${isLive && 'live'}`}

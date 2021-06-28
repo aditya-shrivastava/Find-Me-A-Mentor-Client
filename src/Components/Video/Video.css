@@ -3,11 +3,15 @@
 }
 
 .video-live {
-	@apply flex md:flex-col lg:flex-row w-full justify-between items-center;
+	@apply flex flex-col lg:flex-row w-full justify-evenly h-full items-center relative;
 }
 
 .video-live > video {
-	@apply w-1/2 h-1/2 bg-gray-900 m-4;
+	@apply md:w-4/5 lg:w-2/3 lg:mx-4 bg-gray-900;
+}
+
+.buttons {
+	@apply absolute bottom-10;
 }
 
 .buttons > button {

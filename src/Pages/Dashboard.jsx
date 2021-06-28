@@ -37,17 +37,17 @@ function Dashboard() {
 	}, [user?.uid, user?.type, dispatch]);
 
 	return (
-		<div className='p-4 lg:px-32 flex justify-evenly flex-col'>
+		<div className='dashboard-page'>
 			<DashboardHeader
 				user={user}
 				isMentee={isMentee}
 				setIsMentee={setIsMentee}
 			/>
-			<div className='mt-10 h-screen flex w-full'>
+			<div className='dashboard-page-bottom'>
 				{isMentee ? (
 					<Sessions />
 				) : (
-					<div className='flex w-full justify-between'>
+					<div className='dashboard-page-mentor'>
 						<Notification />
 						<Review />
 					</div>
