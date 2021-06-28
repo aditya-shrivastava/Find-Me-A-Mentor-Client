@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
 import './SessionCard.css';
+
+import { useHistory } from 'react-router-dom';
 
 import { IconButton, Snackbar, Avatar } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
@@ -8,10 +9,11 @@ import { Close } from '@material-ui/icons';
 const SessionCard = ({ slot }) => {
 	const [showSnackbar, setShowSnackbar] = useState(false);
 	const isLive = new Date() > new Date(slot.date);
+	const history = useHistory();
 
 	const handleJoinMeeting = () => {
 		if (isLive) {
-			console.log('Live');
+			history.push(`/meeting/${slot._id}`);
 		} else {
 			setShowSnackbar(true);
 		}

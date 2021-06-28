@@ -3,18 +3,11 @@
 }
 
 .video-live {
-	@apply flex-none;
-}
-.userpic {
-	@apply p-5 flex justify-center;
+	@apply flex md:flex-col lg:flex-row w-full justify-between items-center;
 }
 
-.mentorpic {
-	@apply p-5;
-}
-
-.menteepic {
-	@apply p-5;
+.video-live > video {
+	@apply w-1/2 h-1/2 bg-gray-900 m-4;
 }
 
 .buttons > button {

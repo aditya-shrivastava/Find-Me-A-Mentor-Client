@@ -13,15 +13,26 @@ import Meeting from './Pages/Meeting';
 
 import { Footer, Navbar } from './Components';
 
+import Peer from 'peerjs';
+import io from 'socket.io-client';
 import { useDispatch } from 'react-redux';
 import { login, logout } from './features/userSlice';
 
 let logoutTimer;
+const myPeer = new Peer();
+const socket = io(`http://localhost:5001/`);
 
 function App() {
+	const [me, setMe] = useState('');
 	const [token, setToken] = useState();
 	const [tokenExpiration, setTokenExpiration] = useState();
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		myPeer.on('open', (id) => {
+			setMe(id);
+		});
+	}, []);
 
 	useEffect(() => {
 		const userData = JSON.parse(localStorage.getItem('userData'));
@@ -74,7 +85,7 @@ function App() {
 						<Mentors />
 					</Route>
 					<Route path='/meeting/:id'>
-						<Meeting />
+						<Meeting myPeer={myPeer} me={me} socket={socket} />
 					</Route>
 					<Route path='*'>
 						<Error />

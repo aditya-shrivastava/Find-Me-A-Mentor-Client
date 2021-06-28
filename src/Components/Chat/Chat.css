@@ -3,11 +3,19 @@
 }
 
 .chat-container {
-	@apply bg-gray-100 h-full relative w-full overflow-y-auto; 
+	@apply bg-gray-100 h-full relative w-full;
+}
+
+.messages {
+	@apply h-auto max-h-full overflow-y-auto;
+}
+
+.empty-block {
+	@apply w-full h-44;
 }
 
 .chat form {
-	@apply absolute bottom-12 w-full bg-white shadow-2xl rounded flex justify-center;
+	@apply absolute -bottom-14 ring-1 ring-green-300 w-full bg-white shadow-2xl rounded flex justify-center;
 }
 
 .chat form input {
@@ -16,4 +24,24 @@
 
 .chat form button {
 	@apply text-brgreen-400 p-0 w-1/5;
+}
+
+.message {
+	@apply w-full flex items-start px-2 py-4;
+}
+
+.sender-avatar {
+	@apply w-10 h-10 mr-2;
+}
+
+.message-details {
+	@apply flex flex-col w-full flex-wrap h-auto bg-purple-300 rounded items-start p-2;
+}
+
+.sender-name {
+	@apply text-black m-0 p-0;
+}
+
+.message-body {
+	@apply text-black p-0 m-0 text-lg font-medium;
 }

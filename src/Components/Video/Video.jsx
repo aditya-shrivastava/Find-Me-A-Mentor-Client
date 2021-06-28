@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Video.css';
 import { Avatar, IconButton } from '@material-ui/core';
 //import VideocamIcon from '@material-ui/icons/Videocam';
@@ -8,24 +8,12 @@ import MicOffIcon from '@material-ui/icons/MicOff';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 
-const Video = () => {
+const Video = ({ userVideo, peerVideo }) => {
 	return (
 		<div className='video-container'>
 			<div className='video-live'>
-				<div className='user'>
-					<div className='mentorpic'>
-						<Avatar
-							variant='square'
-							style={{ width: 200, height: 200 }}
-						/>
-					</div>
-					<div className='menteepic'>
-						<Avatar
-							variant='square'
-							style={{ width: 200, height: 200 }}
-						/>
-					</div>
-				</div>
+				<video ref={userVideo} autoPlay playsInline muted />
+				<video ref={peerVideo} autoPlay playsInline />
 			</div>
 			<div className='buttons'>
 				<IconButton>

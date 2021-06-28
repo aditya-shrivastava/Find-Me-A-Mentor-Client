@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import './NotificationBlock.css';
 
+import { useHistory } from 'react-router-dom';
+
 import { IconButton, Snackbar } from '@material-ui/core';
 import { Close, Delete, Info } from '@material-ui/icons';
 
 function NotificationBlock({ slot, removeSlot }) {
+	const history = useHistory();
 	const [open, setOpen] = useState(false);
 	const [showSnackbar, setShowSnackbar] = useState(false);
 	const isLive = new Date() > new Date(slot.date);
 
 	const handleJoinMeeting = () => {
 		if (isLive) {
-			console.log('Live');
+			history.push(`/meeting/${slot._id}`);
 		} else {
 			setShowSnackbar(true);
 		}
