@@ -6,6 +6,14 @@ This platform will allow users to book 1 on 1 personalized sessions with experts
 
 ### REST API repo -> https://github.com/aditya-shrivastava/Find-Me-A-Mentor-Server
 
+### Technologies Used:
+* ReactJS
+* Tailwind CSS
+* Redux
+* NodeJS
+* ExpressJS
+* MongoDB
+
 ### To run in development mode follow the below steps:
 
 `npm install`
