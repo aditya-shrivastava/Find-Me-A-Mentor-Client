@@ -12,6 +12,8 @@ This platform will allow users to book 1 on 1 personalized sessions with experts
 <br/>
 `npm run start`
 
+## Screenshots
+
 ![Find Me A Mentor ](https://user-images.githubusercontent.com/39914834/189053771-1506554c-686e-4f12-9789-c99669c1c12f.png)
 ![Find Me A Mentor 2](https://user-images.githubusercontent.com/39914834/189053795-f3e657e9-e522-477e-afa9-ba7ee9d69209.png)
 ![Find Me A Mentor 3](https://user-images.githubusercontent.com/39914834/189053826-4f17c17b-f059-4186-82e0-78ae939e3d38.png)
