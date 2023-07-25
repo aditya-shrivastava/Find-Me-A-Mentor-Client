@@ -1,8 +1,6 @@
 ## ABOUT
-A mentorship platform where people can go and seek guidance from experts from any field be it business, content creation, software engineering, etc.
-This platform will allow users to book 1 on 1 personalized sessions with experts and help them reach their goals faster. Users can create mentee accounts and upgrade to mentor account if interested. Mentors can create slots as per their schedule and mentees can book those slots on a first come first serve basis. On the day of the meeting both parties can join and have a 1 on 1 personalised session through video call and text conversation.
-
-## Deployed -> https://find-me-a-mentor-2799f.web.app/
+A mentorship platform where people can go and seek guidance from experts from any field, be it business, content creation, software engineering, etc.
+This platform will allow users to book one-on-one personalized sessions with experts and help them reach their goals faster. Users can create mentee accounts and upgrade to mentor accounts if interested. Mentors can create slots per their schedule, and mentees can book them on a first-come, first-serve basis. On the day of the meeting, both parties can join and have a one-on-one personalised session via video call and text.
 
 ### REST API repo -> https://github.com/aditya-shrivastava/Find-Me-A-Mentor-Server
 
@@ -14,7 +12,7 @@ This platform will allow users to book 1 on 1 personalized sessions with experts
 * ExpressJS
 * MongoDB
 
-### To run in development mode follow the below steps:
+### To run in development mode, follow the below steps:
 
 `npm install`
 <br/>
